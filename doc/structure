@@ -1,0 +1,13 @@
+<body>
+  <div class="contain-to-grid">
+    <nav class="top-bar">
+      content
+    </nav>
+  </div>
+  <div id="main">
+    content
+  </div>
+  <div id="footer">
+    content
+  </div>
+</body>
