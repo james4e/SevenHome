@@ -1,8 +1,57 @@
-var scotchApp = angular.module('scotchApp', []);
+var scotchApp = angular.module('scotchApp', ['ngLoadScript', 'ngRoute']);
 
-// create the controller and inject Angular's $scope
-scotchApp.controller('mainController', function($scope) {
+scotchApp.config(function ($routeProvider) {
 
-    // create a message to display in our view
-    $scope.message = 'Everyone come and see how good I look!';
+    $routeProvider
+        .when('/', {
+            templateUrl: 'pages/home.html',
+            controller: 'homeController'
+        })
+        .when('/about', {
+            templateUrl: 'pages/about.html',
+            controller: 'aboutController'
+        })
+        .when('/instructor', {
+            templateUrl: 'pages/instructor.html',
+            controller: 'instructorController'
+        })
+        .when('/contact', {
+            templateUrl: 'pages/contact.html',
+            controller: 'contactController'
+        })
+        .when('/studentreg', {
+            templateUrl: 'pages/student-signup.html',
+            controller: 'studentSignUpController'
+        })
+        .when('/teacherreg', {
+            templateUrl: 'pages/teacher-signup.html',
+            controller: 'teacherSignUpController'
+        })
+        .otherwise({
+            redirectTo: '/'
+        });
+});
+
+scotchApp.controller('homeController', function ($scope) {
+    $scope.pageClass = 'page-home';
+});
+
+scotchApp.controller('aboutController', function ($scope) {
+    $scope.pageClass = 'page-about';
+});
+
+scotchApp.controller('instructorController', function ($scope) {
+    $scope.pageClass = 'page-contact';
+});
+
+scotchApp.controller('contactController', function ($scope) {
+    $scope.pageClass = 'page-contact';
+});
+
+scotchApp.controller('studentSignUpController', function ($scope) {
+    $scope.pageClass = 'page-contact';
+});
+
+scotchApp.controller('teacherSignUpController', function ($scope) {
+    $scope.pageClass = 'page-contact';
 });
