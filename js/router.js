@@ -7,10 +7,6 @@ scotchApp.config(function ($routeProvider) {
             templateUrl: 'pages/home.html',
             controller: 'homeController'
         })
-        .when('/about', {
-            templateUrl: 'pages/about.html',
-            controller: 'aboutController'
-        })
         .when('/instructor', {
             templateUrl: 'pages/instructor.html',
             controller: 'instructorController'
