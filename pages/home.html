@@ -1,4 +1,4 @@
-<div class='mod modDefaultSlider'>
+<div class='mod modDefaultSlider' ng-controller="homeController">
     <div class='sequence' data-autostop='on' data-timeout='0'>
         <a class='sequence-prev' href='javascript:void(0);'>
             <span></span>
@@ -17,14 +17,14 @@
                 <div class='small-title bottom-to-top'>
                     <div class='row'>
                         <div class='large-12 columns'>
-                            <h2>The perfect platform</h2>
+                            <h2>{{homeText.slide1header}}</h2>
                         </div>
                     </div>
                 </div>
                 <div class='title bottom-to-top'>
                     <div class='row'>
                         <div class='large-12 columns'>
-                            <h2>Language learning</h2>
+                            <h2>{{homeText.slide1body}}</h2>
                         </div>
                     </div>
                 </div>
@@ -34,14 +34,14 @@
                 <div class='small-title bottom-to-top'>
                     <div class='row'>
                         <div class='large-12 columns'>
-                            <h2>Learn native language</h2>
+                            <h2>{{homeText.slide2header}}</h2>
                         </div>
                     </div>
                 </div>
                 <div class='title bottom-to-top'>
                     <div class='row'>
                         <div class='large-12 columns'>
-                            <h2>From native people</h2>
+                            <h2>{{homeText.slide2body}}</h2>
                         </div>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
                     <div class='row'>
                         <div class='large-12 columns'>
                             <div class='two spacing'></div>
-                            <a class='button' href='#/studentreg'>Become a student</a>
+                            <a class='button' href='#/studentreg'>{{homeText.slide2btn}}</a>
                         </div>
                     </div>
                 </div>
@@ -59,14 +59,14 @@
                 <div class='small-title bottom-to-top'>
                     <div class='row'>
                         <div class='large-12 columns'>
-                            <h2>We need partners like you</h2>
+                            <h2>{{homeText.slide3header}}</h2>
                         </div>
                     </div>
                 </div>
                 <div class='title bottom-to-top'>
                     <div class='row'>
                         <div class='large-12 columns'>
-                            <h2>Give lecture, get cash</h2>
+                            <h2>{{homeText.slide3body}}</h2>
                         </div>
                     </div>
                 </div>
@@ -74,7 +74,7 @@
                     <div class='row'>
                         <div class='large-12 columns'>
                             <div class='two spacing'></div>
-                            <a class='button' href='#/instructorreg'>Become an instructor</a>
+                            <a class='button' href='#/instructorreg'>{{homeText.slide3btn}}</a>
                         </div>
                     </div>
                 </div>

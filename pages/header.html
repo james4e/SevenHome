@@ -1,4 +1,4 @@
-<div class='contain-to-grid sticky'>
+<div class='contain-to-grid sticky' ng-controller="headerController">
     <nav class='top-bar' data-options='sticky_on: large' data-topbar=''>
         <ul class='title-area'>
             <li class='name'>
@@ -15,25 +15,36 @@
         <section class='top-bar-section'>
             <ul class='right'>
                 <li class=''>
-                    <a href='#/'>Home</a>
+                    <a href='#/'>{{titles.home}}</a>
                 </li>
                 <li class=''>
-                    <a href='#/instructor'>Instructor</a>
+                    <a href='#/instructor'>{{titles.instructors}}</a>
                 </li>
                 <li class=''>
-                    <a href='#/contact'>Contact</a>
+                    <a href='#/contact'>{{titles.contact}}</a>
                 </li>
                 <li class=''>
-                    <a href='#/signin'>Sign In</a>
+                    <a href='#/signin'>{{titles.signin}}</a>
                 </li>
                 <li class='has-dropdown'>
-                    <a href=''>Join Us</a>
+                    <a href=''>{{titles.joinus}}</a>
                     <ul class='dropdown'>
                         <li>
-                            <a href='#/studentreg'>As a Student</a>
+                            <a href='#/studentreg'>{{titles.asstudent}}</a>
                         </li>
                         <li>
-                            <a href='#/instructorreg'>As a Teacher</a>
+                            <a href='#/instructorreg'>{{titles.asinstructor}}</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class='has-dropdown'>
+                    <a href=''>{{titles.language}}</a>
+                    <ul class='dropdown'>
+                        <li>
+                            <a ng-click="selectCategory('cn')">中文</a>
+                        </li>
+                        <li>
+                            <a ng-click="selectCategory('en')">English</a>
                         </li>
                     </ul>
                 </li>
