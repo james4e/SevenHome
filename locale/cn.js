@@ -15,5 +15,18 @@ translation = {
     slide2btn: '学生注册',
     slide3header: '我们需要您这样的伙伴',
     slide3body: '给予知识，收获财富',
-    slide3btn: '导师注册'
+    slide3btn: '导师注册',
+    aboutus: 'Seven Education坐落于硅谷中心地带。我们为全世界的学生们提供赴美学习、旅行、交友的平台。来吧！和我们一起来领略这片梦想之地上的精彩。',
+    box1header: '语言教育',
+    box1body: '和美国人交流，学正宗美式英语。',
+    box2header: '随时随地',
+    box2body: 'Seven Education为我们的用户提供了多种平台，网页登录、手机APP，任您选择。随时随地查看课程信息、定制属于你的专属课程。',
+    box3header: '美国大学申请服务',
+    box3body: '找中介？还是美国本地人更靠谱！你可以通过我们的平台，找到您梦中名校的在读学生，为你答疑，助你申请。',
+    milestone: '里程碑',
+    milestonetext: 'Seven Education是一个活力十足的初创公司。但我们已经赢得了数千名忠实用户的支持',
+    milestone1: '注册学生',
+    milestone2: '导师团队',
+    milestone3: '已授课程',
+    clientheader: '来自客户的声音'
 };

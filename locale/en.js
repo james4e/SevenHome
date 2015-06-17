@@ -15,6 +15,19 @@ translation = {
     slide2btn: 'become a student',
     slide3header: 'we need partners like you',
     slide3body: 'give lecture, get cash',
-    slide3btn: 'become an instructor'
-
+    slide3btn: 'become an instructor',
+    aboutus: 'Seven Education® is located in the center of Silicon Valley. We provide opportunities for global students to have an incredibly amazing study and travel ' +
+    'experience in America. Come and join us to check what is happening on this dream land.',
+    box1header: 'LANGUAGE EDUCATION',
+    box1body: 'Pick a language you want to learn and learn it from native language speakers.',
+    box2header: 'ANY DEVICE, ANYWHERE',
+    box2body: 'In order to allow our students and instructors connect to each other easily, we provide both desktop web app and mobile app to allow anyone access our platform from anywhere.',
+    box3header: 'UNIVERSITY APPLICATION SERVICE',
+    box3body: 'Your instructor is not only an instructor on language education but also a mentor on your university application.',
+    milestone: 'Milestone',
+    milestonetext: 'Seven education is a newly founded company. But we have already won the loyalty of thousands satisfied clients.',
+    milestone1: 'Student Registered',
+    milestone2: 'Instructors hired',
+    milestone3: 'Course delivered',
+    clientheader: 'What out clients say'
 };
