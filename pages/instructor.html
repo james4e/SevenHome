@@ -1,156 +1,157 @@
-<div class='full parallax' style='background-image: url(images/team.jpg); color: #fff;'>
-    <div class='row'>
-        <div class='large-12 columns'>
-            <div class='big mod modSectionHeader'>
-                <div class='centered-text'>
-                    <h2 style='color: #fff'>
-                        Instructor Team
-                    </h2>
+<div ng-controller="instructorController">
+    <div class='full parallax' style='background-image: url(images/team.jpg); color: #fff;'>
+        <div class='row'>
+            <div class='large-12 columns'>
+                <div class='big mod modSectionHeader'>
+                    <div class='centered-text'>
+                        <h2 style='color: #fff'>
+                            {{text.instructors}}
+                        </h2>
+                    </div>
                 </div>
             </div>
         </div>
+        <div class='four spacing'></div>
     </div>
-    <div class='four spacing'></div>
-</div>
-<div class='full'>
-    <div class='row'>
-        <div class='small-6 medium-3 large-3 columns'>
-            <div class='mod modTeamMember'>
-                <div class='member'>
-                    <img class="avatar" width="250" height="250" alt="" src="images/@stock/member-1.jpg"/>
+    <div class='full'>
+        <div class='row'>
+            <div class='small-6 medium-3 large-3 columns'>
+                <div class='mod modTeamMember'>
+                    <div class='member'>
+                        <img class="avatar" width="250" height="250" alt="" src="images/@stock/member-1.jpg"/>
 
-                    <div class='overlay'>
-                        <div class='intro'>
-                            <h3>Jun Liu</h3>
+                        <div class='overlay'>
+                            <div class='intro'>
+                                <h3>Jun Liu</h3>
 
-                            <p>Founder</p>
-                            <ul class='socials'>
-                                <li>
-                                    <a href='http://twitter.com'>
-                                        <i class='fa fa-twitter'></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href='http://facebook.com'>
-                                        <i class='fa fa-facebook'></i>
-                                    </a>
-                                </li>
-                            </ul>
+                                <p>{{text.teacher1title}}</p>
+                                <ul class='socials'>
+                                    <li>
+                                        <a href='http://twitter.com'>
+                                            <i class='fa fa-twitter'></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href='http://facebook.com'>
+                                            <i class='fa fa-facebook'></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <h4 class="centered-text"><a href="#/instructor">Jun Liu</a></h4>
-                <p class='centered-text'>Jun has more than 10 years of English education experience.
-                Her strongest point is to help students achieve a high score in TOEFL and GRE test.</p>
+                    <h4 class="centered-text"><a href="#/instructor">Jun Liu</a></h4>
 
-                <div class='two spacing'></div>
+                    <p class='centered-text'>{{text.teacher1text}}</p>
+
+                    <div class='two spacing'></div>
+                </div>
             </div>
-        </div>
-        <div class='small-6 medium-3 large-3 columns'>
-            <div class='mod modTeamMember'>
-                <div class='member'>
-                    <img class="avatar" width="250" height="250" alt="" src="images/@stock/member-2.jpg"/>
+            <div class='small-6 medium-3 large-3 columns'>
+                <div class='mod modTeamMember'>
+                    <div class='member'>
+                        <img class="avatar" width="250" height="250" alt="" src="images/@stock/member-2.jpg"/>
 
-                    <div class='overlay'>
-                        <div class='intro'>
-                            <h3>Bryant Art</h3>
+                        <div class='overlay'>
+                            <div class='intro'>
+                                <h3>Bryant Art</h3>
 
-                            <p>Co-Founder</p>
-                            <ul class='socials'>
-                                <li>
-                                    <a href='http://twitter.com'>
-                                        <i class='fa fa-twitter'></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href='http://facebook.com'>
-                                        <i class='fa fa-facebook'></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href='http://dribbble.com'>
-                                        <i class='fa fa-dribbble'></i>
-                                    </a>
-                                </li>
-                            </ul>
+                                <p>{{text.teacher2title}}</p>
+                                <ul class='socials'>
+                                    <li>
+                                        <a href='http://twitter.com'>
+                                            <i class='fa fa-twitter'></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href='http://facebook.com'>
+                                            <i class='fa fa-facebook'></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href='http://dribbble.com'>
+                                            <i class='fa fa-dribbble'></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <h4 class="centered-text"><a href="#/instructor">Bryant Art</a></h4>
-                <p class='centered-text'>Bryan is a native speaker who was born and raised in California.
-                    If you want to improve your spoken language, Bryan will be the
-                right choice.</p>
+                    <h4 class="centered-text"><a href="#/instructor">Bryant Art</a></h4>
 
-                <div class='two spacing'></div>
+                    <p class='centered-text'>{{text.teacher2text}}</p>
+
+                    <div class='two spacing'></div>
+                </div>
             </div>
-        </div>
-        <div class='small-6 medium-3 large-3 columns'>
-            <div class='mod modTeamMember'>
-                <div class='member'>
-                    <img class="avatar" width="250" height="250" alt="" src="images/@stock/member-3.jpg"/>
+            <div class='small-6 medium-3 large-3 columns'>
+                <div class='mod modTeamMember'>
+                    <div class='member'>
+                        <img class="avatar" width="250" height="250" alt="" src="images/@stock/member-3.jpg"/>
 
-                    <div class='overlay'>
-                        <div class='intro'>
-                            <h3>Yan Shi</h3>
+                        <div class='overlay'>
+                            <div class='intro'>
+                                <h3>Yan Shi</h3>
 
-                            <p>English Education Specialist</p>
-                            <ul class='socials'>
-                                <li>
-                                    <a href='http://twitter.com'>
-                                        <i class='fa fa-twitter'></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href='http://facebook.com'>
-                                        <i class='fa fa-facebook'></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href='http://tumblr.com'>
-                                        <i class='fa fa-tumblr'></i>
-                                    </a>
-                                </li>
-                            </ul>
+                                <p>{{text.teacher3title}}</p>
+                                <ul class='socials'>
+                                    <li>
+                                        <a href='http://twitter.com'>
+                                            <i class='fa fa-twitter'></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href='http://facebook.com'>
+                                            <i class='fa fa-facebook'></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href='http://tumblr.com'>
+                                            <i class='fa fa-tumblr'></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <h4 class="centered-text"><a href="#/instructor">Yan Shi</a></h4>
-                <p class='centered-text'>Yan is an experienced English instructor who lives in east coast.</p>
+                    <h4 class="centered-text"><a href="#/instructor">Yan Shi</a></h4>
 
-                <div class='two spacing'></div>
+                    <p class='centered-text'>{{text.teacher3text}}</p>
+
+                    <div class='two spacing'></div>
+                </div>
             </div>
-        </div>
-        <div class='small-6 medium-3 large-3 columns'>
-            <div class='mod modTeamMember'>
-                <div class='member'>
-                    <img class="avatar" width="250" height="250" alt="" src="images/@stock/member-4.jpg"/>
+            <div class='small-6 medium-3 large-3 columns'>
+                <div class='mod modTeamMember'>
+                    <div class='member'>
+                        <img class="avatar" width="250" height="250" alt="" src="images/@stock/member-4.jpg"/>
 
-                    <div class='overlay'>
-                        <div class='intro'>
-                            <h3>Shiyang Fei</h3>
+                        <div class='overlay'>
+                            <div class='intro'>
+                                <h3>Shiyang Fei</h3>
 
-                            <p>Web Developer in NYC</p>
-                            <ul class='socials'>
-                                <li>
-                                    <a href='http://twitter.com'>
-                                        <i class='fa fa-twitter'></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href='http://facebook.com'>
-                                        <i class='fa fa-facebook'></i>
-                                    </a>
-                                </li>
-                            </ul>
+                                <p>{{text.teacher4title}}</p>
+                                <ul class='socials'>
+                                    <li>
+                                        <a href='http://twitter.com'>
+                                            <i class='fa fa-twitter'></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href='http://facebook.com'>
+                                            <i class='fa fa-facebook'></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <h4 class="centered-text"><a href="#/instructor">Shiyang Fei</a></h4>
-                <p class='centered-text'>Shiyang is a part time instructor who works as a Web Developer.
-                    If you want to learn English and come to US for a CS degree,
-                    Shiyang can help you much more than just English.</p>
+                    <h4 class="centered-text"><a href="#/instructor">Shiyang Fei</a></h4>
 
-                <div class='two spacing'></div>
+                    <p class='centered-text'>{{text.teacher4text}}</p>
+
+                    <div class='two spacing'></div>
+                </div>
             </div>
         </div>
     </div>

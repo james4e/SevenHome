@@ -18,7 +18,7 @@ translation = {
     slide3btn: '导师注册',
     aboutus: 'Seven Education坐落于硅谷中心地带。我们为全世界的学生们提供赴美学习、旅行、交友的平台。来吧！和我们一起来领略这片梦想之地上的精彩。',
     box1header: '语言教育',
-    box1body: '和美国人交流，学正宗美式英语。',
+    box1body: '这是世界上最棒的语言学习平台之一。我们致力于为学生和导师们提供一个跨国界的交流平台。',
     box2header: '随时随地',
     box2body: 'Seven Education为我们的用户提供了多种平台，网页登录、手机APP，任您选择。随时随地查看课程信息、定制属于你的专属课程。',
     box3header: '美国大学申请服务',
@@ -28,5 +28,14 @@ translation = {
     milestone1: '注册学生',
     milestone2: '导师团队',
     milestone3: '已授课程',
-    clientheader: '来自客户的声音'
+    clientheader: '来自客户的声音',
+
+    /*=================INSTRUCTOR===================*/
+    teacher1text: 'Jun有十多年的英语教学经验。 她的强项在于帮助学生在TOEFL, GRE, SAT等考试中取得高分。',
+    teacher1title: '创始人',
+    teacher2text: 'Bryan 是一名加利福尼亚出生的美国小伙，如果你想提高自己的口语，他将是你最好的选择。',
+    teacher2title: 'Co-Founder',
+    teacher3text: 'Yan是一名经验丰富的英语教学专家。',
+    teacher3title: 'English Education Specialist',
+    teacher4text: 'Shiyang 是一名兼职教师。他的主业是网页应用开发员，Shiyang可以给你带来不知是语言方面的帮助'
 };

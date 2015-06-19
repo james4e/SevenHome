@@ -1,5 +1,6 @@
 //Created by Shiyang Fei on 6/16/2015
 translation = {
+    /*=================HEADER===================*/
     language: '语言',
     asinstructor: 'As instructor',
     asstudent: 'As student',
@@ -8,6 +9,7 @@ translation = {
     contact: 'Contact',
     instructors: 'Instructors',
     home: 'Home',
+    /*=================HOME===================*/
     slide1header: 'The perfect platform for',
     slide1body: 'language learning',
     slide2header: 'learn native language',
@@ -19,7 +21,7 @@ translation = {
     aboutus: 'Seven Education® is located in the center of Silicon Valley. We provide opportunities for global students to have an incredibly amazing study and travel ' +
     'experience in America. Come and join us to check what is happening on this dream land.',
     box1header: 'LANGUAGE EDUCATION',
-    box1body: 'Pick a language you want to learn and learn it from native language speakers.',
+    box1body: 'The world\'s most popular language learning platform is now available. Thousands of students and instructors are already using it to get and deliver the courses.',
     box2header: 'ANY DEVICE, ANYWHERE',
     box2body: 'In order to allow our students and instructors connect to each other easily, we provide both desktop web app and mobile app to allow anyone access our platform from anywhere.',
     box3header: 'UNIVERSITY APPLICATION SERVICE',
@@ -29,5 +31,16 @@ translation = {
     milestone1: 'Student Registered',
     milestone2: 'Instructors hired',
     milestone3: 'Course delivered',
-    clientheader: 'What out clients say'
+    clientheader: 'What out clients say',
+
+    /*=================INSTRUCTOR===================*/
+    teacher1text: 'Jun has more than 10 years of English education experience. Her strongest point is to help students achieve a high score in TOEFL and GRE test.',
+    teacher1title: 'Founder',
+    teacher2text: 'Bryan is a native speaker who was born and raised in California. If you want to improve your spoken language, Bryan will be the right choice.',
+    teacher2title: 'Co-Founder',
+    teacher3text: 'Yan is an experienced English instructor who lives in east coast.',
+    teacher3title: 'English Education Specialist',
+    teacher4text: 'Shiyang is a part time instructor who works as a Web Developer. If you want to learn English and come to US for a CS degree, Shiyang can help you much more than just English.',
+    teacher4title: 'Web Developer in NYC'
+
 };

@@ -15,7 +15,7 @@ scotchApp.controller('headerController', function ($scope) {
 });
 
 scotchApp.controller('homeController', function ($scope) {
-    var homeText = [
+    var text = [
         'slide1header', 'slide1body',
         'slide2header', 'slide2body', 'slide2btn',
         'slide3header', 'slide3body', 'slide3btn',
@@ -27,8 +27,22 @@ scotchApp.controller('homeController', function ($scope) {
         'milestone1', 'milestone2', 'milestone3',
         'clientheader'
     ];
-    $scope.homeText = {};
-    for (var i = 0; i < homeText.length; i++) {
-        $scope.homeText[homeText[i]] = translation[homeText[i]];
+    $scope.text = {};
+    for (var i = 0; i < text.length; i++) {
+        $scope.text[text[i]] = translation[text[i]];
+    }
+});
+
+scotchApp.controller('instructorController', function ($scope) {
+    var text = [
+        'instructors',
+        'teacher1text', 'teacher1title',
+        'teacher2text', 'teacher2title',
+        'teacher3text', 'teacher3title',
+        'teacher4text', 'teacher4title'
+    ];
+    $scope.text = {};
+    for (var i = 0; i < text.length; i++) {
+        $scope.text[text[i]] = translation[text[i]];
     }
 });
