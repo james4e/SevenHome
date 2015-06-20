@@ -1,3 +1,4 @@
+<div ng-controller="studentSignUpController">
 <div class='full parallax' style='background-image: url(images/Optimized-about-us.jpg); color: #fff;'>
     <div class='row'>
         <div class='large-12 columns'>
@@ -25,12 +26,12 @@
                             </p>
                         </div>
                         <div class='medium-12 columns'>
-                            <input class='required' name='name' placeholder='NAME' type='text'>
-                            <input class='required email' name='email' placeholder='EMAIL' type='text'>
-                            <input class='required' name='phone' placeholder='PHONE' type='text'>
-                            <input class='required' name='password' placeholder='PASSWORD' type='password'>
-                            <input class='required' name='password1' placeholder='CONFIRM YOUR PASSWORD' type='password'>
-                            <input class='button white' type='submit'>
+                            <input class='required' name='name' placeholder='{{text.name}}' type='text'>
+                            <input class='required email' name='email' placeholder='{{text.email}}' type='text'>
+                            <input class='required' name='phone' placeholder='{{text.phone}}' type='text'>
+                            <input class='required' name='password' placeholder='{{text.password}}' type='password'>
+                            <input class='required' name='password1' placeholder='{{text.confirmpassword}}' type='password'>
+                            <input class="button white" type="submit" value="{{text.submit}}">
                         </div>
                     </form>
                 </div>
@@ -39,3 +40,5 @@
         </div>
     </div>
 </div>
+</div>
+<script type="text/javascript-lazy">loadJsFile("javascripts/app.js", "js");</script>

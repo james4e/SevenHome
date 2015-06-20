@@ -1,50 +1,56 @@
-<div class='full parallax' style='background-image: url(images/Optimized-about-us.jpg); color: #fff;'>
-    <div class='row'>
-        <div class='large-12 columns'>
-            <div class='big mod modSectionHeader'>
-                <div class='special-title centered-text'>
-                    <h2 style='color: #fff'>
-                        Instructor Sign Up
-                    </h2>
+<div ng-controller="instructorSignUpController">
+    <div class='full parallax' style='background-image: url(images/Optimized-about-us.jpg); color: #fff;'>
+        <div class='row'>
+            <div class='large-12 columns'>
+                <div class='big mod modSectionHeader'>
+                    <div class='special-title centered-text'>
+                        <h2 style='color: #fff'>
+                            {{text.instrucotrsignupheader}}
+                        </h2>
+                    </div>
+                    <h3 class='centered-text' style='color: #fff'>{{text.instrucotrsignupsubheader}}</h3>
                 </div>
-                <h3 class='centered-text' style='color: #fff'>Seven education needs partners like you</h3>
+            </div>
+        </div>
+        <div class='four spacing'></div>
+    </div>
+    <div class='full'>
+        <div class='row'>
+            <div class='large-12 columns'>
+                <p>
+                    Please fill in the below form and complete your application to become a Seven Education Instructor
+                </p>
+            </div>
+        </div>
+        <div class='row'>
+            <div class='medium-12 columns'>
+                <div class='form'>
+                    <div class='row'>
+                        <form id='contact_form' method='POST'>
+                            <div class='large-12 columns'>
+                                <p id='thanks' style='display: none;'>
+                                    Thanks for your application, our hiring specialist will review your information and
+                                    contact you soon!
+                                </p>
+                            </div>
+                            <div class='medium-12 columns'>
+                                <input class='required' name='name' placeholder='{{text.name}}' type='text'>
+                                <input class='required email' name='email' placeholder='{{text.email}}' type='text'>
+                                <input class='required' name='phone' placeholder='{{text.phone}}' type='text'>
+                                <input class='required' name='password' placeholder='{{text.password}}' type='password'>
+                                <input class='required' name='password1' placeholder='{{text.confirmpassword}}' type='password'>
+                                <input class='required' name='job' placeholder='{{text.jobtitle}}' type='text'>
+                                <input class='required' name='company' placeholder='{{text.companyschool}}' type='text'>
+                                <input class='required' name='address' placeholder='{{text.address}}' type='text'>
+                                <textarea class='required' name='introduction' placeholder='{{text.selfintro}}'></textarea>
+                                <input class="button white" type="submit" value="{{text.submit}}">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class='two spacing'></div>
             </div>
         </div>
     </div>
-    <div class='four spacing'></div>
 </div>
-<div class='full'>
-    <div class='row'>
-        <div class='large-12 columns'>
-            <p>
-                Please fill in the below form and complete your application to become a Seven Education Instructor
-            </p>
-        </div>
-    </div>
-    <div class='row'>
-        <div class='medium-12 columns'>
-            <div class='form'>
-                <div class='row'>
-                    <form id='contact_form' method='POST'>
-                        <div class='large-12 columns'>
-                            <p id='thanks' style='display: none;'>
-                                Thanks for your application, our hiring specialist will review your information and contact you soon!
-                            </p>
-                        </div>
-                        <div class='medium-12 columns'>
-                            <input class='required' name='name' placeholder='NAME' type='text'>
-                            <input class='required email' name='email' placeholder='EMAIL' type='text'>
-                            <input class='required' name='phone' placeholder='PHONE' type='text'>
-                            <input class='required' name='job' placeholder='JOB TITLE' type='text'>
-                            <input class='required' name='company' placeholder='COMPANY/SCHOOL' type='text'>
-                            <input class='required' name='address' placeholder='ADDRESS' type='text'>
-                            <textarea class='required' name='introduction' placeholder='SELF-INTRODUCTION'></textarea>
-                            <input class='button white' type='submit'>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div class='two spacing'></div>
-        </div>
-    </div>
-</div>
+<script type="text/javascript-lazy">loadJsFile("javascripts/app.js", "js");</script>

@@ -6,43 +6,58 @@ scotchApp.controller('headerController', function ($scope) {
         localStorage.setItem("seven-education-user-lang", lang);
         window.location.reload();
     };
-    var titles = ['home', 'instructors', 'contact', 'signin', 'joinus',
-        'asinstructor', 'asstudent', 'language'];
+
     $scope.titles = {};
-    for (var i = 0; i < titles.length; i++) {
-        $scope.titles[titles[i]] = translation[titles[i]];
+    for (var fieldName in translation) {
+        $scope.titles[fieldName] = translation[fieldName];
     }
 });
 
 scotchApp.controller('homeController', function ($scope) {
-    var text = [
-        'slide1header', 'slide1body',
-        'slide2header', 'slide2body', 'slide2btn',
-        'slide3header', 'slide3body', 'slide3btn',
-        'aboutus',
-        'box1header', 'box1body',
-        'box2header', 'box2body',
-        'box3header', 'box3body',
-        'milestone', 'milestonetext',
-        'milestone1', 'milestone2', 'milestone3',
-        'clientheader'
-    ];
     $scope.text = {};
-    for (var i = 0; i < text.length; i++) {
-        $scope.text[text[i]] = translation[text[i]];
+    for (var fieldName in translation) {
+        $scope.text[fieldName] = translation[fieldName];
     }
 });
 
 scotchApp.controller('instructorController', function ($scope) {
-    var text = [
-        'instructors',
-        'teacher1text', 'teacher1title',
-        'teacher2text', 'teacher2title',
-        'teacher3text', 'teacher3title',
-        'teacher4text', 'teacher4title'
-    ];
     $scope.text = {};
-    for (var i = 0; i < text.length; i++) {
-        $scope.text[text[i]] = translation[text[i]];
+    for (var fieldName in translation) {
+        $scope.text[fieldName] = translation[fieldName];
+    }
+});
+
+scotchApp.controller('contactController', function ($scope) {
+    $scope.text = {};
+    for (var fieldName in translation) {
+        $scope.text[fieldName] = translation[fieldName];
+    }
+});
+
+scotchApp.controller('studentSignUpController', function ($scope) {
+    $scope.text = {};
+    for (var fieldName in translation) {
+        $scope.text[fieldName] = translation[fieldName];
+    }
+});
+
+scotchApp.controller('instructorSignUpController', function ($scope) {
+    $scope.text = {};
+    for (var fieldName in translation) {
+        $scope.text[fieldName] = translation[fieldName];
+    }
+});
+
+scotchApp.controller('signInController', function ($scope) {
+    $scope.text = {};
+    for (var fieldName in translation) {
+        $scope.text[fieldName] = translation[fieldName];
+    }
+});
+
+scotchApp.controller('footerController', function ($scope) {
+    $scope.text = {};
+    for (var fieldName in translation) {
+        $scope.text[fieldName] = translation[fieldName];
     }
 });

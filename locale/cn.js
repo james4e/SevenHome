@@ -37,5 +37,43 @@ translation = {
     teacher2title: 'Co-Founder',
     teacher3text: 'Yan是一名经验丰富的英语教学专家。',
     teacher3title: 'English Education Specialist',
-    teacher4text: 'Shiyang 是一名兼职教师。他的主业是网页应用开发员，Shiyang可以给你带来不知是语言方面的帮助'
+    teacher4text: 'Shiyang 是一名兼职教师。他的主业是网页应用开发员，Shiyang可以给你带来不知是语言方面的帮助',
+
+
+    /*=================CONTACT US===================*/
+    contactsubheader: '期待您的声音',
+    name: '姓名',
+    email: '电子邮箱',
+    subject: '主题',
+    message: '信息',
+    locationheader: '地址',
+    phoneheader: '联系电话',
+    emailheader: '电子邮箱',
+
+    /*=================STUDENT SIGNUP===================*/
+    studentsignupheader: '学生注册',
+    studentsignupsubheader: '梦起航的港湾',
+    phone: '电话',
+    password: '密码',
+    confirmpassword: '确认密码',
+
+    /*=================INSTRUCTOR SIGNUP===================*/
+    insturctorsignupheader: '导师注册',
+    instructorsignupsubheader: '我们需要您的加入',
+    jobtitle: '职称',
+    companyschool: '公司／学校',
+    address: '地址',
+    selfintro: '个人简介',
+    submit: '提交',
+
+    /*=================FOOTER===================*/
+    copyright: '第七教育',
+    pages: '页面',
+    recentposts: '最新动态',
+    post1: '校园招聘火热进行中',
+    post2: '赢得第一笔投资',
+    post3: '第1000个注册学生',
+    post4: '手机应用发布会',
+    emailupdates: '邮件通知',
+    emailupdatestext: '我们希望与你分享每一个新闻与动态'
 };

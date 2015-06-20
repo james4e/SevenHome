@@ -41,6 +41,42 @@ translation = {
     teacher3text: 'Yan is an experienced English instructor who lives in east coast.',
     teacher3title: 'English Education Specialist',
     teacher4text: 'Shiyang is a part time instructor who works as a Web Developer. If you want to learn English and come to US for a CS degree, Shiyang can help you much more than just English.',
-    teacher4title: 'Web Developer in NYC'
+    teacher4title: 'Web Developer in NYC',
 
+    /*=================CONTACT US===================*/
+    contactsubheader: 'drop by or send an email to us',
+    name: 'name',
+    email: 'email',
+    subject: 'subject',
+    message: 'message',
+    locationheader: 'our location',
+    phoneheader: 'our phone',
+    emailheader: 'our email',
+
+    /*=================STUDENT SIGNUP===================*/
+    studentsignupheader: 'student sign up',
+    studentsignupsubheader: 'start your learning with seven education',
+    phone: 'phone',
+    password: 'password',
+    confirmpassword: 'confirm password',
+
+    /*=================INSTRUCTOR SIGNUP===================*/
+    insturctorsignupheader: 'instructor sign up',
+    instructorsignupsubheader: 'we need partner like you',
+    jobtitle: 'job title',
+    companyschool: 'company/school',
+    address: 'address',
+    selfintro: 'self-introduction',
+    submit: 'submit',
+
+    /*=================FOOTER===================*/
+    copyright: 'Seven Education. All rights reserved.',
+    pages: 'PAGES',
+    recentposts: 'RECENT POSTS',
+    post1: 'Campus hiring event',
+    post2: 'We got the first funding',
+    post3: 'The 1000th student',
+    post4: 'Mobile app released',
+    emailupdates: 'EMAIL UPDATES',
+    emailupdatestext: 'We want to share our latest trends, news and insights with you.'
 };

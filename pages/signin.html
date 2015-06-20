@@ -1,37 +1,35 @@
-<div class='full parallax' style='background-image: url(images/Optimized-about-us.jpg); color: #fff;'>
-    <div class='row'>
-        <div class='large-12 columns'>
-            <div class='big mod modSectionHeader'>
-                <div class='centered-text'>
-                    <h2 style='color: #fff'>
-                        Sign In
-                    </h2>
+<div ng-controller="signInController">
+    <div class='full parallax' style='background-image: url(images/Optimized-about-us.jpg); color: #fff;'>
+        <div class='row'>
+            <div class='large-12 columns'>
+                <div class='big mod modSectionHeader'>
+                    <div class='centered-text'>
+                        <h2 style='color: #fff'>
+                            {{text.signin}}
+                        </h2>
+                    </div>
                 </div>
             </div>
         </div>
+        <div class='four spacing'></div>
     </div>
-    <div class='four spacing'></div>
-</div>
-<div class='full'>
-    <div class='row'>
-        <div class='medium-12 columns'>
-            <div class='form'>
-                <div class='row'>
-                    <form id='contact_form' method='POST'>
-                        <div class='large-12 columns'>
-                            <p id='thanks' style='display: none;'>
-                                Thanks for contacting us, we'll be in touch soon!
-                            </p>
-                        </div>
-                        <div class='medium-12 columns'>
-                            <input class='required email' name='email' placeholder='EMAIL' type='text'>
-                            <input class='required' name='password' placeholder='PASSWORD' type='password'>
-                            <input class='button white' type='submit' text="Log In">
-                        </div>
-                    </form>
+    <div class='full'>
+        <div class='row'>
+            <div class='medium-12 columns'>
+                <div class='form'>
+                    <div class='row'>
+                        <form name='signInForm'>
+                            <div class='medium-12 columns'>
+                                <input class='required email' name='email' placeholder='{{text.email}}' type='text'>
+                                <input class='required' name='password' placeholder='{{text.password}}' type='password'>
+                                <input class="button white" type="submit" value="{{text.signin}}">
+                            </div>
+                        </form>
+                    </div>
                 </div>
+                <div class='two spacing'></div>
             </div>
-            <div class='two spacing'></div>
         </div>
     </div>
 </div>
+<script type="text/javascript-lazy">loadJsFile("javascripts/app.js", "js");</script>
