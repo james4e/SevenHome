@@ -62,7 +62,7 @@ translation = {
 
     /*=================INSTRUCTOR SIGNUP===================*/
     insturctorsignupheader: '导师注册',
-    instructorsignupsubheader: '我们需要您的加入',
+    insturctorsignupsubheader: '我们需要您的加入',
     jobtitle: '职称',
     companyschool: '公司／学校',
     address: '地址',
