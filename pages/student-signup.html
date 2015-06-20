@@ -1,44 +1,59 @@
 <div ng-controller="studentSignUpController">
-<div class='full parallax' style='background-image: url(images/Optimized-about-us.jpg); color: #fff;'>
-    <div class='row'>
-        <div class='large-12 columns'>
-            <div class='big mod modSectionHeader'>
-                <div class='special-title centered-text'>
-                    <h2 style='color: #fff'>
-                        Student Sign Up
-                    </h2>
+    <div class='full parallax' style='background-image: url(images/Optimized-about-us.jpg); color: #fff;'>
+        <div class='row'>
+            <div class='large-12 columns'>
+                <div class='big mod modSectionHeader'>
+                    <div class='special-title centered-text'>
+                        <h2 style='color: #fff'>
+                            Student Sign Up
+                        </h2>
+                    </div>
+                    <h3 class='centered-text' style='color: #fff'>Start your learning with Seven Education</h3>
                 </div>
-                <h3 class='centered-text' style='color: #fff'>Start your learning with Seven Education</h3>
             </div>
         </div>
+        <div class='four spacing'></div>
     </div>
-    <div class='four spacing'></div>
-</div>
-<div class='full'>
-    <div class='row'>
-        <div class='medium-12 columns'>
-            <div class='form'>
-                <div class='row'>
-                    <form id='contact_form' method='POST'>
-                        <div class='large-12 columns'>
-                            <p id='thanks' style='display: none;'>
-                                Thanks for contacting us, we'll be in touch soon!
-                            </p>
-                        </div>
-                        <div class='medium-12 columns'>
-                            <input class='required' name='name' placeholder='{{text.name}}' type='text'>
-                            <input class='required email' name='email' placeholder='{{text.email}}' type='text'>
-                            <input class='required' name='phone' placeholder='{{text.phone}}' type='text'>
-                            <input class='required' name='password' placeholder='{{text.password}}' type='password'>
-                            <input class='required' name='password1' placeholder='{{text.confirmpassword}}' type='password'>
-                            <input class="button white" type="submit" value="{{text.submit}}">
-                        </div>
-                    </form>
+    <div class='full'>
+        <div class='row centered-text' ng-show="showsuccess">
+            <div class='large-12 columns confirm-text'>
+                <p>{{signupSuccessText}}:  <a href="http://m.7edu.org/">m.7edu.org</a></p>
+            </div>
+            <div class='two spacing'></div>
+        </div>
+        <div class='row centered-text' ng-show="showerror">
+            <div class='large-12 columns'>
+                <div class="alert alert-danger" role="alert">
+                    <span class="sr-only">{{errorMsg}}</span>
                 </div>
             </div>
             <div class='two spacing'></div>
         </div>
+        <div class='row'>
+            <div class='medium-12 columns'>
+                <div class='form'>
+                    <div class='row'>
+                        <form id='contact_form' name="studentSignUp" method='POST'>
+                            <div class='medium-12 columns'>
+                                <input required class='required' name='name' placeholder='{{text.name}}' type='text'
+                                       ng-model="formData.name">
+                                <input required class='required email' name='email' placeholder='{{text.email}}'
+                                       type="email" ng-model="formData.email">
+                                <input required class='required' name='phone' placeholder='{{text.phone}}' type='text'
+                                       ng-model="formData.phone">
+                                <input required class='required' name='password' placeholder='{{text.password}}'
+                                       type='password' ng-model="formData.password">
+                                <input required class='required' name='password1' placeholder='{{text.confirmpassword}}'
+                                       type='password' ng-model="formData.password1">
+                                <input required class="button white" type="submit" value="{{text.submit}}"
+                                       ng-click="submitForm()">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class='two spacing'></div>
+            </div>
+        </div>
     </div>
-</div>
 </div>
 <script type="text/javascript-lazy">loadJsFile("javascripts/app.js", "js");</script>

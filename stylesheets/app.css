@@ -3,3 +3,11 @@
     color: #FFFFFF !important;
     font-size: 2.57143rem !important;
 }
+
+.alert {
+    color: red;
+}
+
+.confirm-text {
+    color: green;
+}

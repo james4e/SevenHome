@@ -15,18 +15,33 @@
         <div class='four spacing'></div>
     </div>
     <div class='full'>
-        <div class='row'>
+        <div class='row centered-text' ng-show="showsuccess">
+            <div class='large-12 columns confirm-text'>
+                <p>{{signupSuccessText}}</a></p>
+            </div>
+            <div class='two spacing'></div>
+        </div>
+        <div class='row centered-text' ng-show="showerror">
+            <div class='large-12 columns'>
+                <div class="alert alert-danger" role="alert">
+                    <span class="sr-only">{{errorMsg}}</span>
+                </div>
+            </div>
+            <div class='two spacing'></div>
+        </div>
+        <div class='row centered-text'>
             <div class='large-12 columns'>
                 <p>
                     Please fill in the below form and complete your application to become a Seven Education Instructor
                 </p>
             </div>
+            <div class='two spacing'></div>
         </div>
         <div class='row'>
             <div class='medium-12 columns'>
                 <div class='form'>
                     <div class='row'>
-                        <form id='contact_form' method='POST'>
+                        <form name='instructorSignUp' method='POST'>
                             <div class='large-12 columns'>
                                 <p id='thanks' style='display: none;'>
                                     Thanks for your application, our hiring specialist will review your information and
@@ -34,16 +49,16 @@
                                 </p>
                             </div>
                             <div class='medium-12 columns'>
-                                <input class='required' name='name' placeholder='{{text.name}}' type='text'>
-                                <input class='required email' name='email' placeholder='{{text.email}}' type='text'>
-                                <input class='required' name='phone' placeholder='{{text.phone}}' type='text'>
-                                <input class='required' name='password' placeholder='{{text.password}}' type='password'>
-                                <input class='required' name='password1' placeholder='{{text.confirmpassword}}' type='password'>
-                                <input class='required' name='job' placeholder='{{text.jobtitle}}' type='text'>
-                                <input class='required' name='company' placeholder='{{text.companyschool}}' type='text'>
-                                <input class='required' name='address' placeholder='{{text.address}}' type='text'>
-                                <textarea class='required' name='introduction' placeholder='{{text.selfintro}}'></textarea>
-                                <input class="button white" type="submit" value="{{text.submit}}">
+                                <input required class='required' name='name' placeholder='{{text.name}}' type='text' ng-model="formData.name">
+                                <input required class='required email' name='email' placeholder='{{text.email}}' type="email" ng-model="formData.email">
+                                <input required class='required' name='phone' placeholder='{{text.phone}}' type='text' ng-model="formData.phone">
+                                <input required class='required' name='password' placeholder='{{text.password}}' type='password' ng-model="formData.password">
+                                <input required class='required' name='password1' placeholder='{{text.confirmpassword}}' type='password' ng-model="formData.password1">
+                                <input required class='required' name='job' placeholder='{{text.jobtitle}}' type='text' ng-model="formData.jobtitle">
+                                <input required class='required' name='company' placeholder='{{text.companyschool}}' type='text' ng-model="formData.company">
+                                <textarea name='introduction' placeholder='{{text.selfintro}}' ng-model="formData.description"></textarea>
+                                <input required class="button white" type="submit" value="{{text.submit}}"
+                                       ng-click="submitForm()">
                             </div>
                         </form>
                     </div>

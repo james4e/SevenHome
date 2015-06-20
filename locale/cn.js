@@ -56,6 +56,9 @@ translation = {
     phone: '电话',
     password: '密码',
     confirmpassword: '确认密码',
+    passworddifferror: '请在密码栏与密码确认栏输入一样的密码',
+    generalformerror: '请正确填写表单',
+    signupsuccess: '欢迎注册，请点击右边的链接来使用我们的APP',
 
     /*=================INSTRUCTOR SIGNUP===================*/
     insturctorsignupheader: '导师注册',
@@ -65,6 +68,7 @@ translation = {
     address: '地址',
     selfintro: '个人简介',
     submit: '提交',
+    instructorsignupsuccess: '欢迎您的申请，我们的招聘人员会审核您的资料并尽快联系你',
 
     /*=================FOOTER===================*/
     copyright: '第七教育',
@@ -75,5 +79,8 @@ translation = {
     post3: '第1000个注册学生',
     post4: '手机应用发布会',
     emailupdates: '邮件通知',
-    emailupdatestext: '我们希望与你分享每一个新闻与动态'
+    emailupdatestext: '我们希望与你分享每一个新闻与动态',
+
+    /*=================LOGIN===================*/
+    signinguidetext: '请使用右边的链接来登入我们的系统'
 };

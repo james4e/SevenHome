@@ -59,6 +59,9 @@ translation = {
     phone: 'phone',
     password: 'password',
     confirmpassword: 'confirm password',
+    passworddifferror: 'Submission failed. Please confirm you password is correct',
+    generalformerror: 'Submission failed. Please fill in the required fields',
+    signupsuccess: 'Welcome to Seven Education. Please go to our app page and sign in.',
 
     /*=================INSTRUCTOR SIGNUP===================*/
     insturctorsignupheader: 'instructor sign up',
@@ -68,6 +71,7 @@ translation = {
     address: 'address',
     selfintro: 'self-introduction',
     submit: 'submit',
+    instructorsignupsuccess: 'Thanks for your application, our hiring specialist will review your information and contact you soon!',
 
     /*=================FOOTER===================*/
     copyright: 'Seven Education. All rights reserved.',
@@ -78,5 +82,8 @@ translation = {
     post3: 'The 1000th student',
     post4: 'Mobile app released',
     emailupdates: 'EMAIL UPDATES',
-    emailupdatestext: 'We want to share our latest trends, news and insights with you.'
+    emailupdatestext: 'We want to share our latest trends, news and insights with you.',
+
+    /*=================LOGIN===================*/
+    signinguidetext: 'Please login our system using this link'
 };
