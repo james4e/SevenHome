@@ -80,6 +80,7 @@ scotchApp.controller('studentSignUpController', function ($scope, $http) {
             var data = response.data;
             if (data.success) {
                 $scope.showsuccess = true;
+                $scope.formData = {};
             } else {
                 $scope.showerror = true;
                 $scope.errorMsg = data.errorMsg;
@@ -128,6 +129,7 @@ scotchApp.controller('instructorSignUpController', function ($scope, $http) {
             var data = response.data;
             if (data.success) {
                 $scope.showsuccess = true;
+                $scope.formData = {};
             } else {
                 $scope.showerror = true;
                 $scope.errorMsg = data.errorMsg;
