@@ -27,11 +27,11 @@ translation = {
     box3header: 'UNIVERSITY APPLICATION SERVICE',
     box3body: 'Your instructor is not only an instructor on language education but also a mentor on your university application.',
     milestone: 'Milestone',
-    milestonetext: 'Seven education is a newly founded company. But we have already won the loyalty of thousands satisfied clients.',
+    milestonetext: 'Seven education is a strong company. But we have already won the loyalty of thousands satisfied clients.',
     milestone1: 'Student Registered',
     milestone2: 'Instructors hired',
     milestone3: 'Course delivered',
-    clientheader: 'What out clients say',
+    clientheader: 'What our clients say',
 
     /*=================INSTRUCTOR===================*/
     teacher1text: 'Jun has more than 10 years of English education experience. Her strongest point is to help students achieve a high score in TOEFL and GRE test.',
