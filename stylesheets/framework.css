@@ -3765,7 +3765,10 @@ span.postfix, label.postfix {
 }
 
 /* We use this to get basic styling on all basic form elements */
-input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="color"], textarea {
+input[type="text"], input[type="password"], input[type="date"], input[type="datetime"],
+input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"],
+input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"],
+input[type="color"], textarea {
     -webkit-appearance: none;
     border-radius: 0;
     background-color: #FFFFFF;

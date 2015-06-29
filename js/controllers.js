@@ -125,7 +125,11 @@ angular.module('scotchApp.controllers', []).
                         $scope.errorMsg = data.errorMsg;
                     }
                 });
-        }
+        };
+        $scope.loadTags = function(query) {
+            var allTags = sevenAPIService.getDefaultTags();
+            return allTags;
+        };
     }).
     controller('instructorController', function ($scope) {
         $scope.text = {};

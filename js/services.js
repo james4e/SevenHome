@@ -6,10 +6,7 @@ angular.module('scotchApp.services', [])
 
         /**************************MENTOR**************************/
         sevenAPI.loadMentorList = function () {
-            return ($http({
-                url: 'data/mentor-list.json',
-                method: 'POST'
-            }));
+            return $http.get('data/mentor-list.json');
         };
 
 
@@ -23,6 +20,10 @@ angular.module('scotchApp.services', [])
                     'Content-Type': undefined
                 }
             }));
+        };
+
+        sevenAPI.getDefaultTags  = function (query) {
+            return $http.get('data/default-tags.json');
         };
 
         sevenAPI.studentSignUp = function (formData) {

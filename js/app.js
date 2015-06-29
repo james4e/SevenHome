@@ -2,7 +2,8 @@ angular.module('scotchApp', [
     'ngLoadScript',
     'ngRoute',
     'scotchApp.controllers',
-    'scotchApp.services'
+    'scotchApp.services',
+    'ngTagsInput'
 ]).config([
     '$httpProvider',
     function ($httpProvider) {

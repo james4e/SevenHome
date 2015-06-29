@@ -65,9 +65,11 @@
                                        type='text' ng-model="formData.company">
                                 <textarea name='introduction' placeholder='{{text.selfintro}}'
                                           ng-model="formData.description"></textarea>
-                                <label>
-                                    <input type="text" class="spam-field" name="spam" ng-model="formData.spam">
-                                </label>
+                                <tags-input ng-model="tags">
+                                    <auto-complete source="loadTags($query)"></auto-complete>
+                                </tags-input>
+                                <!--THIS IS A HIDDEN FIELD TO PREVENT SPAM-->
+                                <label><input type="text" class="spam-field" name="spam" ng-model="formData.spam"></label>
                                 <input required class="button white" type="submit" value="{{text.submit}}"
                                        ng-click="submitForm()">
                             </div>
