@@ -1,11 +1,12 @@
-var scotchApp = angular.module('scotchApp', ['ngLoadScript', 'ngRoute']),
+var scotchApp = angular.module('scotchApp', ["ngLoadScript", "ngRoute"]),
     apiUrlPrefix = 'http://121.199.18.221:8081/v1';
 
 scotchApp.config(['$httpProvider', function($httpProvider) {
     delete $httpProvider.defaults.headers.common["X-Requested-With"];
 }]);
 
-scotchApp.controller('headerController', function ($scope) {
+scotchApp.
+    controller('headerController', ["$scope", "$q", function ($scope, $q) {
     $scope.selectCategory = function (lang) {
         console.log(lang);
         localStorage.setItem("seven-education-user-lang", lang);
@@ -16,30 +17,34 @@ scotchApp.controller('headerController', function ($scope) {
     for (var fieldName in translation) {
         $scope.titles[fieldName] = translation[fieldName];
     }
-});
+}]);
 
-scotchApp.controller('homeController', function ($scope) {
+scotchApp.
+    controller('homeController', ["$scope", "$q", function ($scope) {
     $scope.text = {};
     for (var fieldName in translation) {
         $scope.text[fieldName] = translation[fieldName];
     }
-});
+}]);
 
-scotchApp.controller('instructorController', function ($scope) {
+scotchApp.
+    controller('instructorController', ["$scope", "$q", function ($scope) {
     $scope.text = {};
     for (var fieldName in translation) {
         $scope.text[fieldName] = translation[fieldName];
     }
-});
+}]);
 
-scotchApp.controller('contactController', function ($scope) {
+scotchApp.
+    controller('contactController', ["$scope", "$q", function ($scope) {
     $scope.text = {};
     for (var fieldName in translation) {
         $scope.text[fieldName] = translation[fieldName];
     }
-});
+}]);
 
-scotchApp.controller('studentSignUpController', function ($scope, $http) {
+scotchApp.
+    controller('studentSignUpController', ["$scope", "$q", function ($scope, $http) {
     $scope.text = {};
     for (var fieldName in translation) {
         $scope.text[fieldName] = translation[fieldName];
@@ -87,9 +92,9 @@ scotchApp.controller('studentSignUpController', function ($scope, $http) {
             }
         });
     }
-});
+}]);
 
-scotchApp.controller('instructorSignUpController', function ($scope, $http) {
+scotchApp.controller('instructorSignUpController', ["$scope", "$q", function ($scope, $http) {
     $scope.text = {};
     for (var fieldName in translation) {
         $scope.text[fieldName] = translation[fieldName];
@@ -136,18 +141,18 @@ scotchApp.controller('instructorSignUpController', function ($scope, $http) {
             }
         });
     }
-});
+}]);
 
-scotchApp.controller('signInController', function ($scope) {
+scotchApp.controller('signInController', ["$scope", "$q", function ($scope) {
     $scope.text = {};
     for (var fieldName in translation) {
         $scope.text[fieldName] = translation[fieldName];
     }
-});
+}]);
 
-scotchApp.controller('footerController', function ($scope) {
+scotchApp.controller('footerController', ["$scope", "$q", function ($scope) {
     $scope.text = {};
     for (var fieldName in translation) {
         $scope.text[fieldName] = translation[fieldName];
     }
-});
+}]);
