@@ -3,7 +3,9 @@ angular.module('scotchApp', [
     'ngRoute',
     'scotchApp.controllers',
     'scotchApp.services',
-    'ngTagsInput'
+    'ngTagsInput',
+    'ui.select',
+    'ngSanitize'
 ]).config([
     '$httpProvider',
     function ($httpProvider) {

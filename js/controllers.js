@@ -81,7 +81,7 @@ angular.module('scotchApp.controllers', []).
                 });
         }
     }]).
-    controller('instructorSignUpController', function ($scope, sevenAPIService) {
+    controller('instructorSignUpController', function ($scope, sevenAPIService, $timeout) {
         $scope.text = {};
         for (var fieldName in translation) {
             $scope.text[fieldName] = translation[fieldName];
@@ -126,9 +126,11 @@ angular.module('scotchApp.controllers', []).
                     }
                 });
         };
-        $scope.loadTags = function(query) {
-            var allTags = sevenAPIService.getDefaultTags();
-            return allTags;
+        $scope.loadTags = function (query) {
+            return sevenAPIService.getDefaultTags();
+        };
+        $scope.loadMajors = function (query) {
+            return sevenAPIService.getDefaultMajors();
         };
     }).
     controller('instructorController', function ($scope) {

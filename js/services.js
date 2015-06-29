@@ -22,10 +22,6 @@ angular.module('scotchApp.services', [])
             }));
         };
 
-        sevenAPI.getDefaultTags  = function (query) {
-            return $http.get('data/default-tags.json');
-        };
-
         sevenAPI.studentSignUp = function (formData) {
             return ($http({
                 url: apiUrlPrefix + '/student/signup',
@@ -35,6 +31,18 @@ angular.module('scotchApp.services', [])
                     'Content-Type': undefined
                 }
             }));
+        };
+
+        sevenAPI.getDefaultTags = function (query) {
+            return $http.get('data/default-tags.json');
+        };
+
+        sevenAPI.getDefaultMajors = function (query) {
+            return $http.get('data/default-majors.json');
+        };
+
+        sevenAPI.getCountries = function (query) {
+            return $http.get('data/countries.json');
         };
 
         return sevenAPI;
