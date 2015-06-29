@@ -45,6 +45,9 @@
                                        type='password' ng-model="formData.password">
                                 <input required class='required' name='password1' placeholder='{{text.confirmpassword}}'
                                        type='password' ng-model="formData.password1">
+                                <label>
+                                    <input type="text" class="spam-field" name="spam" ng-model="formData.spam">
+                                </label>
                                 <input required class="button white" type="submit" value="{{text.submit}}"
                                        ng-click="submitForm()">
                             </div>

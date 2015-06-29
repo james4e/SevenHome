@@ -11,3 +11,7 @@
 .confirm-text {
     color: green;
 }
+
+.spam-field {
+    display: none !important;
+}

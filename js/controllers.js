@@ -48,6 +48,9 @@ angular.module('scotchApp.controllers', []).
             $scope.showsuccess = false;
             $scope.showerror = false;
             var data = $scope.formData;
+            if (data.spam && data.spam.length > 0) {
+                return;
+            }
             if ($scope.studentSignUp.$valid) {
                 if (data.password == data.password1) {
                     $scope.triggerSubmission();
@@ -90,6 +93,9 @@ angular.module('scotchApp.controllers', []).
             $scope.showsuccess = false;
             $scope.showerror = false;
             var data = $scope.formData;
+            if (data.spam && data.spam.length > 0) {
+                return;
+            }
             if ($scope.instructorSignUp.$valid) {
                 if (data.password == data.password1) {
                     $scope.triggerSubmission();
