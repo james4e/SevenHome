@@ -1,6 +1,6 @@
 //Created by Shiyang Fei on 6/12/2015
-(function($) {
-    $(document).ready(function() {
+(function ($) {
+    $(document).ready(function () {
         var $page = $('body');
         var config = {
             dependencyPath: {

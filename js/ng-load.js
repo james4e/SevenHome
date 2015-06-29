@@ -4,12 +4,12 @@
 
     var app = ng.module('ngLoadScript', []);
 
-    app.directive('script', function() {
+    app.directive('script', function () {
         return {
             restrict: 'E',
             scope: false,
-            link: function(scope, elem, attr) {
-                if (attr.type=='text/javascript-lazy') {
+            link: function (scope, elem, attr) {
+                if (attr.type == 'text/javascript-lazy') {
                     var code = elem.text();
                     var f = new Function(code);
                     f();
@@ -23,7 +23,7 @@ function loadJsFile(filename, filetype) {
     if (filetype == "js") {
         // if filename is a external JavaScript file
         var fileref = document.createElement('script');
-        fileref.setAttribute("type","text/javascript");
+        fileref.setAttribute("type", "text/javascript");
         fileref.setAttribute("src", filename);
     }
     else if (filetype == "css") {
