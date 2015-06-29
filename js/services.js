@@ -4,6 +4,16 @@ angular.module('scotchApp.services', [])
         var apiUrlPrefix = 'http://121.199.18.221:8081/v1',
             sevenAPI = {};
 
+        /**************************MENTOR**************************/
+        sevenAPI.loadMentorList = function () {
+            return ($http({
+                url: 'data/mentor-list.json',
+                method: 'POST'
+            }));
+        };
+
+
+        /**************************SIGN UP**************************/
         sevenAPI.mentorSignUp = function (formData) {
             return ($http({
                 url: apiUrlPrefix + '/teacher/signup',
