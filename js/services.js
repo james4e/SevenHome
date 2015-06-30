@@ -1,7 +1,7 @@
 //Created by Shiyang Fei on 6/29/2015
 angular.module('scotchApp.services', [])
     .factory('sevenAPIService', function ($http, Upload) {
-        var apiUrlPrefix = 'http://121.199.18.221:8081/v1',
+        var apiUrlPrefix = 'http://198.11.176.132:8081/v1',
             sevenAPI = {};
 
         /**************************MENTOR**************************/
@@ -36,21 +36,12 @@ angular.module('scotchApp.services', [])
             }));
         };
 
-        sevenAPI.getDefaultTags = function (query) {
-            return (Upload.upload({
-                url: 'student/signup',
-                method: 'OPTIONS',
-                fields: {name: '123'},
-                file: null,
-                fileFormDataName: 'profileImage',
-                headers: {
-                    'Content-Type': undefined
-                }
-            }));
+        sevenAPI.getDefaultSubjects = function (query) {
+            return $http.get('data/default-subjects.json');
         };
 
         sevenAPI.getDefaultMajors = function (query) {
-            return $http.get('http://121.199.18.221:8081/v1/');
+            return $http.get('data/default-majors.json');
         };
 
         sevenAPI.getCountries = function (query) {
