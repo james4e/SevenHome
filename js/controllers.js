@@ -81,12 +81,13 @@ angular.module('scotchApp.controllers', []).
                 });
         }
     }]).
-    controller('instructorSignUpController', function ($scope, sevenAPIService, $timeout) {
+    controller('instructorSignUpController', function ($scope, sevenAPIService, $timeout, $compile, Upload) {
         $scope.text = {};
         for (var fieldName in translation) {
             $scope.text[fieldName] = translation[fieldName];
         }
         $scope.formData = {};
+        $scope.profileImage = null;
         $scope.showsuccess = false;
         $scope.showerror = false;
         $scope.submitForm = function () {
@@ -114,7 +115,7 @@ angular.module('scotchApp.controllers', []).
             $scope.signupSuccessText = translation.instructorsignupsuccess;
 
 
-            sevenAPIService.mentorSignUp($scope.formData).
+            sevenAPIService.mentorSignUp($scope).
                 then(function (response) {
                     var data = response.data;
                     if (data.success) {
@@ -131,6 +132,9 @@ angular.module('scotchApp.controllers', []).
         };
         $scope.loadMajors = function (query) {
             return sevenAPIService.getDefaultMajors();
+        };
+        $scope.loadCountries = function (query) {
+            return sevenAPIService.getCountries();
         };
     }).
     controller('instructorController', function ($scope) {

@@ -16,11 +16,8 @@
     display: none !important;
 }
 
-.select2 > .select2-choice.ui-select-match {
-    /* Because of the inclusion of Bootstrap */
-    height: 29px;
-}
-
-.selectize-control > .selectize-dropdown {
-    top: 36px;
+.thumb {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
