@@ -68,9 +68,12 @@ translation = {
     insturctorsignupheader: 'instructor sign up',
     instructorsignupsubheader: 'we need partner like you',
     jobtitle: 'job title',
-    companyschool: 'company/school',
+    company: 'company',
+    school: 'school',
     address: 'address',
     selfintro: 'self-introduction',
+    majors: 'Add a major',
+    subjects: 'Add a subject',
     submit: 'submit',
     instructorsignupsuccess: 'Thanks for your application, our hiring specialist will review your information and contact you soon!',
 

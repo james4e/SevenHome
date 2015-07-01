@@ -65,9 +65,12 @@ translation = {
     insturctorsignupheader: '导师注册',
     insturctorsignupsubheader: '我们需要您的加入',
     jobtitle: '职称',
-    companyschool: '公司／学校',
+    company: '公司',
+    school: '学校',
     address: '地址',
     selfintro: '个人简介',
+    majors: '添加专业',
+    subjects: '添加主讲课程',
     submit: '提交',
     instructorsignupsuccess: '欢迎您的申请，我们的招聘人员会审核您的资料并尽快联系你',
 

@@ -49,33 +49,38 @@
                                 </p>
                             </div>
                             <div class='medium-12 columns'>
-                                <input required class='required' name='name' placeholder='{{text.name}}' type='text'
-                                       ng-model="formData.name">
                                 <input required class='required email' name='email' placeholder='{{text.email}}'
                                        type="email" ng-model="formData.email">
-                                <input required class='required' name='phone' placeholder='{{text.phone}}' type='text'
-                                       ng-model="formData.phone">
                                 <input required class='required' name='password' placeholder='{{text.password}}'
                                        type='password' ng-model="formData.password">
                                 <input required class='required' name='password1' placeholder='{{text.confirmpassword}}'
                                        type='password' ng-model="formData.password1">
-                                <input required class='required' name='job' placeholder='{{text.jobtitle}}' type='text'
-                                       ng-model="formData.jobtitle">
-                                <input required class='required' name='company' placeholder='{{text.companyschool}}'
-                                       type='text' ng-model="formData.company">
-                                <textarea name='introduction' placeholder='{{text.selfintro}}'
-                                          ng-model="formData.description"></textarea>
-
-                                <tags-input ng-model="tags" placeholder="Add a subject">
-                                    <auto-complete source="loadSubjects($query)"></auto-complete>
-                                </tags-input>
-
-                                <tags-input ng-model="majors" placeholder="Add a Major">
-                                    <auto-complete source="loadMajors($query)"></auto-complete>
-                                </tags-input>
 
                                 <input type="file" ngf-select ng-model="profileImage" name="file" accept="image/*" required>
                                 <img ng-show="profileImage[0] != null" ngf-src="profileImage[0]" class="thumb">
+                                <input required class='required' name='name' placeholder='{{text.name}}' type='text'
+                                       ng-model="formData.name">
+                                <input required class='required' name='phone' placeholder='{{text.phone}}' type='text'
+                                       ng-model="formData.phone">
+
+                                <tags-input ng-model="tags" placeholder="{{text.subjects}}">
+                                    <auto-complete source="loadSubjects($query)"></auto-complete>
+                                </tags-input>
+
+                                <input required class='required' name='school' placeholder='{{text.school}}'
+                                       type='text' ng-model="formData.school">
+
+                                <tags-input ng-model="majors" placeholder="{{text.majors}}">
+                                    <auto-complete source="loadMajors($query)"></auto-complete>
+                                </tags-input>
+
+                                <input required class='required' name='job' placeholder='{{text.jobtitle}}' type='text'
+                                       ng-model="formData.jobtitle">
+
+                                <input required class='required' name='company' placeholder='{{text.company}}'
+                                       type='text' ng-model="formData.company">
+                                <textarea name='introduction' placeholder='{{text.selfintro}}'
+                                          ng-model="formData.description"></textarea>
 
                                 <input required class="button white" type="submit" value="{{text.submit}}"
                                        ng-click="submitForm()">
