@@ -20,9 +20,10 @@ angular.module('scotchApp.services', [])
                     file: scope.profileImage[0],
                     fileFormDataName: 'profileImage',
                     headers: {
-                        'Content-Type': undefined
+                        'Content-Type': 'multipart/form-data'
                     }
-                }));
+                })
+            );
         };
 
         sevenAPI.studentSignUp = function (formData) {
