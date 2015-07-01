@@ -50,62 +50,64 @@
                             </div>
                             <div class='medium-12 columns signup-container'>
                                 <input required class='required email' name='email'
-                                       placeholder='{{text.email}} (Required)'
+                                       placeholder='{{text.email}} ({{text.required}})'
                                        type="email" ng-model="formData.email">
                                 <input required class='required' name='password'
-                                       placeholder='{{text.password}} (Required)'
+                                       placeholder='{{text.password}} ({{text.required}})'
                                        type='password' ng-model="formData.password">
                                 <input required class='required' name='password1'
-                                       placeholder='{{text.confirmpassword}} (Required)'
+                                       placeholder='{{text.confirmpassword}} ({{text.required}})'
                                        type='password' ng-model="formData.password1">
 
                                 <div ngf-select ng-model="profileImage" class="upload-button"
                                      ngf-multiple="false" ngf-accept="'*.jpg,*.png'" ng-model-rejected="rejFiles"
                                      tabindex="0"
-                                     ngf-change="generateThumb($files, $rejectedFiles)">{{text.selectprofile}}
+                                     ngf-max-size="500000"
+                                     ngf-change="onFileChange($files, $rejectedFiles)">{{text.selectprofile}}
                                 </div>
+                                <div class="alert alert-danger" ng-show="invalidFileError != null">{{invalidFileError}}</div>
 
-                                <img ng-show="profileImage[0] != null" ngf-src="profileImage[0]" class="thumb">
+                                <img ng-show="profileImage[0] != null" ngf-src="profileImage[0]" class="thumb profile-review" width="100px" height="100px">
 
-                                <input required class='required' name='name' placeholder='{{text.name}} (Required)'
+                                <input required class='required' name='name' placeholder='{{text.name}} ({{text.required}})'
                                        type='text'
                                        ng-model="formData.name">
                                 <input required class='required weixin' name='weixin'
-                                       placeholder='{{text.weixin}} (Required)'
+                                       placeholder='{{text.weixin}} ({{text.required}})'
                                        type="email" ng-model="formData.email">
                                 <input class='required' name='phone' placeholder='{{text.phone}}' type='text'
                                        ng-model="formData.phone">
 
-                                <tags-input ng-model="formData.subjects" placeholder="{{text.subjects}} (Required)">
+                                <tags-input ng-model="formData.subjects" placeholder="{{text.subjects}} ({{text.required}})">
                                     <auto-complete source="loadSubjects($query)"></auto-complete>
                                 </tags-input>
 
-                                <input required class='required' name='school' placeholder='{{text.school}} (Required)'
+                                <input required class='required' name='school' placeholder='{{text.school}} ({{text.required}})'
                                        type='text' ng-model="formData.school">
 
-                                <tags-input ng-model="formData.majors" placeholder="{{text.majors}} (Required)">
+                                <tags-input ng-model="formData.majors" placeholder="{{text.majors}} ({{text.required}})">
                                     <auto-complete source="loadMajors($query)"></auto-complete>
                                 </tags-input>
 
-                                <input required class='required' name='degree' placeholder='{{text.degree}} (Required)'
+                                <input required class='required' name='degree' placeholder='{{text.degree}} ({{text.required}})'
                                        type='text' ng-model="formData.degree">
 
                                 <input class='required' name='job' placeholder='{{text.jobtitle}}' type='text'
                                        ng-model="formData.jobTitle">
 
                                 <input required class='required' name='country'
-                                       placeholder='{{text.country}} (Required)' type='text'
+                                       placeholder='{{text.country}} ({{text.required}})' type='text'
                                        ng-model="formData.country">
 
-                                <input required class='required' name='state' placeholder='{{text.state}} (Required)'
+                                <input required class='required' name='state' placeholder='{{text.state}} ({{text.required}})'
                                        type='text'
                                        ng-model="formData.state">
 
-                                <input required class='required' name='zip' placeholder='{{text.zip}} (Required)'
+                                <input required class='required' name='zip' placeholder='{{text.zip}} ({{text.required}})'
                                        type='text'
                                        ng-model="formData.zip">
 
-                                <textarea required name='introduction' placeholder='{{text.selfintro}} (Required)'
+                                <textarea required name='introduction' placeholder='{{text.selfintro}} ({{text.required}})'
                                           ng-model="formData.description"></textarea>
 
                                 <input required class="button white" type="submit" value="{{text.submit}}"

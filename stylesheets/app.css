@@ -33,6 +33,10 @@
     cursor: pointer;
 }
 
-.signup-container input {
-    text-transform: capitalize;
+.signup-container .alert.alert-danger {
+    margin-bottom: 1.875rem;
+}
+
+.signup-container .profile-review {
+    box-shadow: 3px 3px 3px #888888;
 }

@@ -127,6 +127,13 @@ angular.module('scotchApp.controllers', []).
                     }
                 });
         };
+        $scope.onFileChange = function (files, rejectedFiles) {
+            if (rejectedFiles.length > 0) {
+                $scope.invalidFileError = $scope.text.fileError;
+            } else {
+                $scope.invalidFileError = null;
+            }
+        };
         $scope.loadSubjects = function (query) {
             return sevenAPIService.getDefaultSubjects();
         };
