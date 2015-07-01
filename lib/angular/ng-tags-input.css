@@ -40,6 +40,7 @@ tags-input .tags {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     transition: box-shadow 0.45s, border-color 0.45s ease-in-out;
+    height: 3rem;
 }
 
 tags-input .tags.focused {
@@ -58,8 +59,8 @@ tags-input .tags .tag-item {
     display: inline-block;
     float: left;
     color: #FFFFFF;
-    height: 26px;
-    line-height: 25px;
+    height: 2.5rem;
+    line-height: 2.4rem;
     border: 1px solid #66CEF6;
     border-radius: 3px;
     background: #66CEF6;
@@ -89,9 +90,9 @@ tags-input .tags .input {
     outline: 0;
     margin: 2px;
     padding: 0;
-    padding-left: 5px;
+    padding-left: 12px;
     float: left;
-    height: 26px;
+    height: 100%;
 }
 
 tags-input .tags .input.invalid-tag {
