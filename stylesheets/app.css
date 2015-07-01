@@ -40,3 +40,7 @@
 .signup-container .profile-review {
     box-shadow: 3px 3px 3px #888888;
 }
+
+.mentor [class*="column"] + [class*="column"]:last-child {
+    float: left !important;
+}

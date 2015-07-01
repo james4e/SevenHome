@@ -49,6 +49,10 @@ angular.module('scotchApp.services', [])
             return $http.get('data/countries.json');
         };
 
+        sevenAPI.getTeacherList = function () {
+            return $http.get('data/teachers.json');
+        };
+
         return sevenAPI;
     }
 );

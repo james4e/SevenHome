@@ -81,7 +81,7 @@ angular.module('scotchApp.controllers', []).
                 });
         }
     }]).
-    controller('instructorSignUpController', function ($scope, sevenAPIService, $timeout, $compile, Upload) {
+    controller('instructorSignUpController', function ($scope, sevenAPIService) {
         $scope.text = {};
         for (var fieldName in translation) {
             $scope.text[fieldName] = translation[fieldName];
@@ -144,10 +144,66 @@ angular.module('scotchApp.controllers', []).
             return sevenAPIService.getCountries();
         };
     }).
-    controller('instructorController', function ($scope) {
+    controller('instructorController', function ($scope, sevenAPIService) {
         $scope.text = {};
+        $scope.view = 'school';
         for (var fieldName in translation) {
             $scope.text[fieldName] = translation[fieldName];
+        }
+        sevenAPIService.getTeacherList().then(function (response) {
+            var res = response.data;
+            if (res.success) {
+                $scope.teacherList = res.data;
+                $scope.formatTeacherList(res.data)
+            } else {
+                $scope.showerror = true;
+                $scope.errorMsg = res.errorMsg;
+            }
+        });
+        $scope.formatTeacherList = function (rs) {
+            var view = $scope.view,
+                sections = {},
+                len = rs.length, r, i, keys,
+                len2, j, key;
+            for (i = 0; i < len; i++) {
+                r = rs[i];
+                if (angular.isString(r[view])) {
+                    keys = [r[view]];
+                }
+                if (angular.isArray(r[view])) {
+                    keys = r[view];
+                }
+                len2 = keys.length;
+                for (j = 0; j < len2; j++) {
+                    key = keys[j];
+                    if (!sections[key]) {
+                        sections[key] = {
+                            rows: [{teachers: [r]}]
+                        }
+                    } else {
+                        var currentRow = sections[key].rows[sections[key].rows.length - 1];
+                        if (currentRow.teachers.length >= 4) {
+                            currentRow = sections[key].rows.push({
+                                teachers: [r]
+                            });
+                        } else {
+                            currentRow.teachers.push(r);
+                        }
+                    }
+                }
+            }
+            $scope.formattedTeacherList = $scope.changeSectionObjectToArray(sections);
+        };
+        $scope.changeSectionObjectToArray = function (sections) {
+            var array = [];
+            for (var key in sections) {
+                array.push({
+                    key: key,
+                    data: sections[key].rows
+                })
+            }
+            console.log(array)
+            return array;
         }
     }
 );
