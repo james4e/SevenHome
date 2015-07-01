@@ -93,6 +93,7 @@ tags-input .tags .input {
     padding-left: 12px;
     float: left;
     height: 100%;
+    width: 200px !important;
 }
 
 tags-input .tags .input.invalid-tag {

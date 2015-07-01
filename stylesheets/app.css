@@ -21,3 +21,18 @@
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
+.upload-button {
+    width: 300px;
+    background-color: #F9CE06;
+    border-radius: 3px;
+    color: #FFFFFF;
+    padding-left: 15px;
+    margin-bottom: 1.875rem;
+    line-height: 3rem;
+    cursor: pointer;
+}
+
+.signup-container input {
+    text-transform: capitalize;
+}

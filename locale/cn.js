@@ -71,7 +71,12 @@ translation = {
     selfintro: '个人简介',
     majors: '添加专业',
     subjects: '添加主讲课程',
+    selectprofile: '请上传头像',
+    degree: '学历',
     submit: '提交',
+    required: '必填',
+    zip: '邮编',
+    weixin: '微信',
     instructorsignupsuccess: '欢迎您的申请，我们的招聘人员会审核您的资料并尽快联系你',
 
     /*=================FOOTER===================*/

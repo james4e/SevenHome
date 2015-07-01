@@ -48,38 +48,64 @@
                                     contact you soon!
                                 </p>
                             </div>
-                            <div class='medium-12 columns'>
-                                <input required class='required email' name='email' placeholder='{{text.email}}'
+                            <div class='medium-12 columns signup-container'>
+                                <input required class='required email' name='email'
+                                       placeholder='{{text.email}} (Required)'
                                        type="email" ng-model="formData.email">
-                                <input required class='required' name='password' placeholder='{{text.password}}'
+                                <input required class='required' name='password'
+                                       placeholder='{{text.password}} (Required)'
                                        type='password' ng-model="formData.password">
-                                <input required class='required' name='password1' placeholder='{{text.confirmpassword}}'
+                                <input required class='required' name='password1'
+                                       placeholder='{{text.confirmpassword}} (Required)'
                                        type='password' ng-model="formData.password1">
 
-                                <input type="file" ngf-select ng-model="profileImage" name="file" accept="image/*" required>
+                                <div ngf-select ng-model="profileImage" class="upload-button"
+                                     ngf-multiple="false" ngf-accept="'*.jpg,*.png'" ng-model-rejected="rejFiles"
+                                     tabindex="0"
+                                     ngf-change="generateThumb($files, $rejectedFiles)">{{text.selectprofile}}
+                                </div>
+
                                 <img ng-show="profileImage[0] != null" ngf-src="profileImage[0]" class="thumb">
-                                <input required class='required' name='name' placeholder='{{text.name}}' type='text'
+
+                                <input required class='required' name='name' placeholder='{{text.name}} (Required)'
+                                       type='text'
                                        ng-model="formData.name">
-                                <input required class='required' name='phone' placeholder='{{text.phone}}' type='text'
+                                <input required class='required weixin' name='weixin'
+                                       placeholder='{{text.weixin}} (Required)'
+                                       type="email" ng-model="formData.email">
+                                <input class='required' name='phone' placeholder='{{text.phone}}' type='text'
                                        ng-model="formData.phone">
 
-                                <tags-input ng-model="tags" placeholder="{{text.subjects}}">
+                                <tags-input ng-model="formData.subjects" placeholder="{{text.subjects}} (Required)">
                                     <auto-complete source="loadSubjects($query)"></auto-complete>
                                 </tags-input>
 
-                                <input required class='required' name='school' placeholder='{{text.school}}'
+                                <input required class='required' name='school' placeholder='{{text.school}} (Required)'
                                        type='text' ng-model="formData.school">
 
-                                <tags-input ng-model="majors" placeholder="{{text.majors}}">
+                                <tags-input ng-model="formData.majors" placeholder="{{text.majors}} (Required)">
                                     <auto-complete source="loadMajors($query)"></auto-complete>
                                 </tags-input>
 
-                                <input required class='required' name='job' placeholder='{{text.jobtitle}}' type='text'
-                                       ng-model="formData.jobtitle">
+                                <input required class='required' name='degree' placeholder='{{text.degree}} (Required)'
+                                       type='text' ng-model="formData.degree">
 
-                                <input required class='required' name='company' placeholder='{{text.company}}'
-                                       type='text' ng-model="formData.company">
-                                <textarea name='introduction' placeholder='{{text.selfintro}}'
+                                <input class='required' name='job' placeholder='{{text.jobtitle}}' type='text'
+                                       ng-model="formData.jobTitle">
+
+                                <input required class='required' name='country'
+                                       placeholder='{{text.country}} (Required)' type='text'
+                                       ng-model="formData.country">
+
+                                <input required class='required' name='state' placeholder='{{text.state}} (Required)'
+                                       type='text'
+                                       ng-model="formData.state">
+
+                                <input required class='required' name='zip' placeholder='{{text.zip}} (Required)'
+                                       type='text'
+                                       ng-model="formData.zip">
+
+                                <textarea required name='introduction' placeholder='{{text.selfintro}} (Required)'
                                           ng-model="formData.description"></textarea>
 
                                 <input required class="button white" type="submit" value="{{text.submit}}"
