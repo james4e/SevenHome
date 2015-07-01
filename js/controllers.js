@@ -90,6 +90,9 @@ angular.module('scotchApp.controllers', []).
         $scope.profileImage = null;
         $scope.showsuccess = false;
         $scope.showerror = false;
+        sevenAPIService.getCountries().then(function (response) {
+            $scope.countries = response.data;
+        });
         $scope.submitForm = function () {
             $scope.showsuccess = false;
             $scope.showerror = false;
@@ -139,9 +142,6 @@ angular.module('scotchApp.controllers', []).
         };
         $scope.loadMajors = function (query) {
             return sevenAPIService.getDefaultMajors();
-        };
-        $scope.loadCountries = function (query) {
-            return sevenAPIService.getCountries();
         };
     }).
     controller('instructorController', function ($scope, sevenAPIService) {

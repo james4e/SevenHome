@@ -44,3 +44,6 @@
 .mentor [class*="column"] + [class*="column"]:last-child {
     float: left !important;
 }
+.mentor p {
+    margin-bottom: 0.2rem;
+}
