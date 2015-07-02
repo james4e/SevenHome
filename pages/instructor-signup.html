@@ -62,7 +62,7 @@
                                 <div ngf-select ng-model="profileImage" class="upload-button"
                                      ngf-multiple="false" ngf-accept="'*.jpg,*.png'" ng-model-rejected="rejFiles"
                                      tabindex="0"
-                                     ngf-max-size="500000"
+                                     ngf-max-size="5000000"
                                      ngf-change="onFileChange($files, $rejectedFiles)">{{text.selectprofile}}
                                 </div>
                                 <div class="alert alert-danger" ng-show="invalidFileError != null">
@@ -83,22 +83,26 @@
                                        ng-model="formData.phone">
 
                                 <tags-input ng-model="formData.subjects"
-                                            placeholder="{{text.subjects}} ({{text.required}})">
+                                            placeholder="{{text.subjects}} ({{text.required}})"
+                                            add-from-autocomplete-only="true">
                                     <auto-complete source="loadSubjects($query)"></auto-complete>
                                 </tags-input>
 
-                                <input required class='required' name='school'
-                                       placeholder='{{text.school}} ({{text.required}})'
-                                       type='text' ng-model="formData.school">
+                                <select ng-model="formData.school">
+                                    <option value="" disabled selected>Select your school</option>
+                                    <option ng-repeat="school in schools track by $index" value="{{school}}">{{school}}</option>
+                                </select>
 
                                 <tags-input ng-model="formData.majors"
-                                            placeholder="{{text.majors}} ({{text.required}})">
+                                            placeholder="{{text.majors}} ({{text.required}})"
+                                            add-from-autocomplete-only="true">
                                     <auto-complete source="loadMajors($query)"></auto-complete>
                                 </tags-input>
 
-                                <input required class='required' name='degree'
-                                       placeholder='{{text.degree}} ({{text.required}})'
-                                       type='text' ng-model="formData.degree">
+                                <select ng-model="formData.degree">
+                                    <option value="" disabled selected>Select your degree</option>
+                                    <option ng-repeat="degree in degrees" value="{{degree}}">{{degree}}</option>
+                                </select>
 
                                 <input class='required' name='job' placeholder='{{text.jobtitle}}' type='text'
                                        ng-model="formData.jobTitle">

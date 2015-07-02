@@ -6,7 +6,7 @@
             dependencyPath: {
                 plugin: 'javascripts/'
             }
-        }
+        };
         var application = new Tc.Application($page, config);
         application.registerModules();
         application.start();

@@ -7,6 +7,7 @@
             "school": "MIT",
             "majors": ["Math", "Computer Science"],
             "subjects": ["SAT"],
+            "degree": "PHD",
             "description": "Hello"
         },
         {
@@ -47,7 +48,7 @@
         {
             "name": "Jun Liu",
             "school": "Stevens",
-            "majors": ["Math", "Computer Science"],
+            "majors": ["Computer Science"],
             "subjects": ["SAT", "GRE"],
             "description": "Hello"
         },

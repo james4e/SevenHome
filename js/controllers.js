@@ -93,6 +93,12 @@ angular.module('scotchApp.controllers', []).
         sevenAPIService.getCountries().then(function (response) {
             $scope.countries = response.data;
         });
+        sevenAPIService.getSchools().then(function (response) {
+            $scope.schools = response.data;
+        });
+        sevenAPIService.getDegrees().then(function (response) {
+            $scope.degrees = response.data;
+        });
         $scope.submitForm = function () {
             $scope.showsuccess = false;
             $scope.showerror = false;
@@ -145,6 +151,8 @@ angular.module('scotchApp.controllers', []).
         };
     }).
     controller('instructorController', function ($scope, sevenAPIService) {
+        $scope.colors = ['#005F9F', '#1F9DC0', '#5BBBBB', '#FDDB08', '#F5851F',
+            '#ED1C24', '#FF7F27', '#EDDE76', '#85AA9E', '#668CA6'];
         $scope.text = {};
         $scope.view = 'school';
         for (var fieldName in translation) {
@@ -196,14 +204,25 @@ angular.module('scotchApp.controllers', []).
         };
         $scope.changeSectionObjectToArray = function (sections) {
             var array = [];
+            $scope.filterOptions = ['All'];
             for (var key in sections) {
+                $scope.filterOptions.push(key);
                 array.push({
                     key: key,
                     data: sections[key].rows
                 })
             }
-            console.log(array)
             return array;
+        };
+        $scope.onViewSelect = function (event) {
+            $scope.view  = event.target.attributes['data-cat'].value;
+            $scope.refreshView();
+        };
+        $scope.onFilterToggle = function (event) {
+            var element = event
+        };
+        $scope.refreshView = function () {
+            $scope.formatTeacherList($scope.teacherList);
         }
     }
 );

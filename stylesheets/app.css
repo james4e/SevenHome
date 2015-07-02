@@ -44,6 +44,33 @@
 .mentor [class*="column"] + [class*="column"]:last-child {
     float: left !important;
 }
-.mentor p {
-    margin-bottom: 0.2rem;
+.mentor p,
+.mentor h4{
+    margin-bottom: 0.1rem;
+}
+
+.mentor .gallery-nav.large a {
+    font-size: 1.5rem;
+}
+
+.mentor .gallery-nav li.active {
+    border: 1px solid #F9CE06;
+}
+
+.mentor .gallery-nav li.active a {
+    color: #F9CE06;
+}
+
+div.random-profile {
+    height: 250px;
+    width: 250px;
+    font-size: 10rem;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 250px;
+    color: #FFFFFF;
+}
+
+select {
+    padding-left: 15px;
 }

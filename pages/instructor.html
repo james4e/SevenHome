@@ -14,6 +14,33 @@
         <div class='four spacing'></div>
     </div>
     <div class='full'>
+
+        <div class="mod modGallery">
+            <div class="gallery-nav large">
+                <ul>
+                    <li class="current">
+                        <a data-cat="school" ng-click="onViewSelect($event)">By School</a>
+                    </li>
+                    <li class="">
+                        <a data-cat="majors" ng-click="onViewSelect($event)">By Major</a>
+                    </li>
+                    <li class="">
+                        <a data-cat="subjects" ng-click="onViewSelect($event)">By Subject</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mod modGallery">
+            <div class="gallery-nav">
+                <ul>
+                    <li class="{{option=='All' ? 'active' : ''}}" ng-repeat="option in filterOptions">
+                        <a data-cat="{{option}}" ng-click="onFilterToggle($event)">{{option}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
         <div ng-repeat="section in formattedTeacherList">
             <div class='row'>
                 <h2>{{section.key}}</h2>
@@ -24,11 +51,22 @@
                      class='small-6 medium-3 large-3 columns'>
                     <div class='mod modTeamMember'>
                         <div class='member'>
-                            <img class="avatar" width="250" height="250" alt="" src="images/@stock/member-1.jpg"/>
+                            <img ng-show="teacher.profileImage != null" class="avatar" width="250" height="250" alt=""
+                                 src="{{teacher.profileImage}}"/>
+
+                            <div ng-show="teacher.profileImage == null" class="random-profile"
+                                 style="background: {{colors[$index]}}">{{teacher.name[0]}}
+                            </div>
                         </div>
                         <h4 class="centered-text">{{teacher.name}}</h4>
-                        <p class='centered-text'>{{teacher.school}}</p>
+
+                        <p class='centered-text'>
+                            <span>{{teacher.school}}</span>
+                            <span ng-show="teacher.degree != null"> | {{teacher.degree}}</span>
+                        </p>
+
                         <p class='centered-text'>{{teacher.subjects.join(", ")}}</p>
+
                         <p class='centered-text'>{{teacher.description}}</p>
 
                         <div class='two spacing'></div>
