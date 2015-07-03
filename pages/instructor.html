@@ -19,7 +19,7 @@
             <div class="gallery-nav large">
                 <ul>
                     <li class="{{view.status}}"
-                        ng-repeat="view in views track by $index"]>
+                        ng-repeat="view in views track by $index" ]>
                         <a data-cat="{{view.name}}" ng-click="onViewSelect($event)">{{view.text}}</a>
                     </li>
                 </ul>
@@ -31,7 +31,8 @@
                 <ul>
                     <li class="{{option.status}}"
                         ng-repeat="option in filterOptions track by $index"
-                        ng-click="onFilterToggle($event, $index)">
+                        ng-click="onFilterToggle($event, $index)"
+                        ng-show="option.name">
                         <a data-cat="{{option.name}}">{{option.name}}</a>
                     </li>
                 </ul>
@@ -48,10 +49,13 @@
                      class='small-6 medium-3 large-3 columns'>
                     <div class='mod modTeamMember'>
                         <div class='member'>
-                            <img ng-show="teacher.profileImage != null" class="avatar" width="250" height="250" alt=""
-                                 src="{{teacher.profileImage}}"/>
-
-                            <div ng-show="teacher.profileImage == null"
+                            <div ng-show="teacher.profileImage"
+                                 style="cursor: pointer;width:250px;height:250px;
+                                 background:url('{{profileUrlPrefix}}{{teacher.profileImage}}') no-repeat center center;
+                                 background-size:250px;"
+                                 ng-click="onMentorSelected(teacher)">
+                            </div>
+                            <div ng-show="!teacher.profileImage"
                                  class="random-profile"
                                  style="background: {{colors[$index]}};cursor: pointer;"
                                  ng-click="onMentorSelected(teacher)">
@@ -66,12 +70,14 @@
 
                         <p class='centered-text'>
                             <span>{{teacher.school}}</span>
-                            <span ng-show="teacher.degree != null"> | {{teacher.degree}}</span>
+                            <span ng-show="teacher.degree"> | {{teacher.degree}}</span>
                         </p>
 
                         <p class='centered-text'>{{teacher.subjects.join(", ")}}</p>
 
-                        <p class='centered-text'>{{teacher.description}}</p>
+                        <p class='centered-text' style="font-size:0.8rem;">
+                            {{teacher.description.length > 150 ? teacher.description.substring(0, 150) + '...' : teacher.description}}
+                        </p>
 
                         <div class='two spacing'></div>
                     </div>

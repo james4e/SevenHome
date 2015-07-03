@@ -88,7 +88,11 @@
                                 <tags-input ng-model="formData.subjects"
                                             placeholder="{{text.addsubjects}} ({{text.required}})"
                                             add-from-autocomplete-only="true">
-                                    <auto-complete source="loadSubjects($query)"></auto-complete>
+                                    <auto-complete source="loadSubjects($query)"
+                                                   min-length="0"
+                                                   debounce-delay="0">
+
+                                    </auto-complete>
                                 </tags-input>
 
                                 <select ng-model="formData.school">
@@ -101,7 +105,11 @@
                                 <tags-input ng-model="formData.majors"
                                             placeholder="{{text.addmajors}} ({{text.required}})"
                                             add-from-autocomplete-only="true">
-                                    <auto-complete source="loadMajors($query)"></auto-complete>
+                                    <auto-complete source="loadMajors($query)"
+                                                   min-length="0"
+                                                   debounce-delay="0">
+
+                                    </auto-complete>
                                 </tags-input>
 
                                 <select ng-model="formData.degree">

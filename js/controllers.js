@@ -158,6 +158,7 @@ angular.module('scotchApp.controllers', []).
         $scope.colors = ['#005F9F', '#1F9DC0', '#5BBBBB', '#FDDB08', '#F5851F',
             '#ED1C24', '#FF7F27', '#EDDE76', '#85AA9E', '#668CA6'];
         $scope.view = $routeParams.view || 'school';
+        $scope.profileUrlPrefix = sevenAPIService.profileUrlPrefix;
         $scope.views = [
             {
                 name: 'school',
@@ -180,6 +181,17 @@ angular.module('scotchApp.controllers', []).
         sevenAPIService.getTeacherList().then(function (response) {
             var res = response.data;
             if (res.success) {
+                _.each(res.data, function (t) {
+                    if (t.majors) {
+                        t.majors = t.majors.replace('\\', '');
+                        t.majors = _.pluck(JSON.parse(t.majors), 'text');
+                    }
+                    if (t.subjects) {
+                        t.subjects = t.subjects.replace('\\', '');
+                        t.subjects = _.pluck(JSON.parse(t.subjects), 'text');
+                    }
+
+                });
                 $scope.teacherList = res.data;
                 $scope.formatTeacherList(res.data)
             } else {
@@ -289,10 +301,12 @@ angular.module('scotchApp.controllers', []).
         $scope.onMentorSelected = function (mentorInfo) {
             sevenAPIService.mentorInfo = mentorInfo;
             $location.path('/mentor');
+            window.scrollTo(0, 0);
         }
     })
     .controller('singleMentorController', function ($scope, sevenAPIService, $location) {
         $scope.text = {};
+        $scope.profileUrlPrefix = sevenAPIService.profileUrlPrefix;
         for (var fieldName in translation) {
             $scope.text[fieldName] = translation[fieldName];
         }

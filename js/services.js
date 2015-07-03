@@ -1,8 +1,10 @@
 //Created by Shiyang Fei on 6/29/2015
 angular.module('scotchApp.services', [])
     .factory('sevenAPIService', function ($http, Upload) {
-        var apiUrlPrefix = 'http://198.11.176.132:8081/v1',
-            sevenAPI = {};
+        var sevenAPI = {};
+        sevenAPI.apiUrlPrefix = 'http://198.11.176.132:8081/v1';
+        sevenAPI.profileUrlPrefix = 'http://198.11.176.132:8081/profile/';
+
 
         /**************************MENTOR**************************/
         sevenAPI.loadMentorList = function () {
@@ -14,7 +16,7 @@ angular.module('scotchApp.services', [])
         sevenAPI.mentorSignUp = function (scope) {
             return (
                 Upload.upload({
-                    url: apiUrlPrefix + '/teacher/signup',
+                    url: sevenAPI.apiUrlPrefix + '/teacher/signup',
                     method: 'POST',
                     fields: scope.formData,
                     file: scope.profileImage[0],
@@ -28,7 +30,7 @@ angular.module('scotchApp.services', [])
 
         sevenAPI.studentSignUp = function (formData) {
             return ($http({
-                url: apiUrlPrefix + '/student/signup',
+                url: sevenAPI.apiUrlPrefix + '/student/signup',
                 method: 'POST',
                 data: angular.toJson(formData),
                 headers: {
@@ -58,14 +60,14 @@ angular.module('scotchApp.services', [])
         };
 
         sevenAPI.getTeacherList = function () {
-            return ($http({
-                url: apiUrlPrefix + '/teacher-list-www',
+            return $http({
+                url: sevenAPI.apiUrlPrefix + '/teacher/list-www',
                 method: 'POST',
                 data: angular.toJson({action: 'load'}),
                 headers: {
                     'Content-Type': undefined
                 }
-            }));
+            });
         };
 
         return sevenAPI;
