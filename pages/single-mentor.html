@@ -23,6 +23,11 @@
                             <img ng-show="mentorInfo.profileImage" width="500" height="500" alt=""
                                  src="{{profileUrlPrefix}}{{mentorInfo.profileImage}}"/>
 
+                            <div ng-show="teacher.profileImage"
+                                 style="cursor: pointer;width:500px;height:500px;
+                                 background:url('{{profileUrlPrefix}}{{mentorInfo.profileImage}}') no-repeat center center;
+                                 background-size:500px;">
+                            </div>
                             <div ng-show="mentorInfo.profileImage == null"
                                  class="random-profile"
                                     style="background:#5BBBBB">

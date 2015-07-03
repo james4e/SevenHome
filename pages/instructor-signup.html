@@ -1,4 +1,5 @@
 <div ng-controller="instructorSignUpController">
+    <toaster-container toaster-options="{'time-out': 3000, 'animation-class': 'toast-top-center'}"></toaster-container>
     <div class='full parallax' style='background-image: url(images/Optimized-about-us.jpg); color: #fff;'>
         <div class='row'>
             <div class='large-12 columns'>
@@ -95,11 +96,10 @@
                                     </auto-complete>
                                 </tags-input>
 
-                                <select ng-model="formData.school">
-                                    <option value="" disabled selected>Select your school</option>
-                                    <option ng-repeat="school in schools track by $index" value="{{school}}">
-                                        {{school}}
-                                    </option>
+                                <select ng-model="formData.school"
+                                        ng-options="school for school in schools"
+                                        data-options="select.options">
+                                    <option value="" disabled selected>{{text.selectschool}}</option>
                                 </select>
 
                                 <tags-input ng-model="formData.majors"
@@ -112,17 +112,19 @@
                                     </auto-complete>
                                 </tags-input>
 
-                                <select ng-model="formData.degree">
-                                    <option value="" disabled selected>Select your degree</option>
-                                    <option ng-repeat="degree in degrees" value="{{degree}}">{{degree}}</option>
+                                <select ng-model="formData.degree"
+                                        ng-options="degree for degree in degrees"
+                                        data-options="select.options">
+                                    <option value="" disabled selected>{{text.selectdegree}}</option>
                                 </select>
 
                                 <input class='required' name='job' placeholder='{{text.jobtitle}}' type='text'
                                        ng-model="formData.jobTitle">
 
-                                <select ng-model="formData.country">
+                                <select ng-model="formData.country"
+                                        ng-options="country.name for country in countries"
+                                        data-options="select.options">
                                     <option value="" disabled selected>Select your country</option>
-                                    <option ng-repeat="country in countries" value="{{country.name}}">{{country.name}}
                                     </option>
                                 </select>
 

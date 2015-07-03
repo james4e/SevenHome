@@ -63,6 +63,8 @@ translation = {
     passworddifferror: 'Submission failed. Please confirm you password is correct',
     generalformerror: 'Submission failed. Please fill in the required fields',
     signupsuccess: 'Welcome to Seven Education. Please go to our app page and sign in.',
+    success: 'Success',
+    error: 'Error',
 
     /*=================INSTRUCTOR SIGNUP===================*/
     insturctorsignupheader: 'instructor sign up',
@@ -85,6 +87,8 @@ translation = {
     majors: 'major',
     subjects: 'subject',
     fileError: 'Please select a JPG, PNG file with the size less than 3MB',
+    selectschool: 'Select your school',
+    selectdegree: 'Select your degree',
     instructorsignupsuccess: 'Thanks for your application, our hiring specialist will review your information and contact you soon!',
 
     /*=================FOOTER===================*/

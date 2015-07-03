@@ -35,7 +35,7 @@ angular.module('scotchApp.controllers', []).
             $scope.text[fieldName] = translation[fieldName];
         }
     }]).
-    controller('studentSignUpController', ["$scope", "sevenAPIService", function ($scope, sevenAPIService) {
+    controller('studentSignUpController', ["$scope", "sevenAPIService", function ($scope, sevenAPIService, toaster) {
         $scope.text = {};
         for (var fieldName in translation) {
             $scope.text[fieldName] = translation[fieldName];
@@ -58,10 +58,12 @@ angular.module('scotchApp.controllers', []).
                 else {
                     $scope.showerror = true;
                     $scope.errorMsg = translation.passworddifferror;
+                    toaster.error({title: translation.error, body: translation.passworddifferror});
                 }
             } else {
                 $scope.showerror = true;
                 $scope.errorMsg = translation.generalformerror;
+                toaster.error({title: translation.error, body: translation.generalformerror});
             }
         };
         $scope.triggerSubmission = function () {
@@ -74,14 +76,17 @@ angular.module('scotchApp.controllers', []).
                     if (data.success) {
                         $scope.showsuccess = true;
                         $scope.formData = {};
+                        toaster.success({title: translation.success, body: translation.signupsuccess});
                     } else {
                         $scope.showerror = true;
                         $scope.errorMsg = data.errorMsg;
+                        toaster.error({title: translation.error, body: data.errorMsg});
                     }
                 });
         }
     }]).
-    controller('instructorSignUpController', function ($scope, sevenAPIService) {
+    controller('instructorSignUpController', function ($scope, sevenAPIService, toaster) {
+        console.log('instructorSignUpController');
         $scope.text = {};
         for (var fieldName in translation) {
             $scope.text[fieldName] = translation[fieldName];
@@ -113,10 +118,12 @@ angular.module('scotchApp.controllers', []).
                 else {
                     $scope.showerror = true;
                     $scope.errorMsg = translation.passworddifferror;
+                    toaster.error({title: translation.error, body: translation.passworddifferror});
                 }
             } else {
                 $scope.showerror = true;
                 $scope.errorMsg = translation.generalformerror;
+                toaster.error({title: translation.error, body: translation.generalformerror});
             }
         };
         $scope.triggerSubmission = function () {
@@ -130,9 +137,12 @@ angular.module('scotchApp.controllers', []).
                     if (data.success) {
                         $scope.showsuccess = true;
                         $scope.formData = {};
+                        window.scrollTo(0, 0);
+                        toaster.success({title: translation.success, body: translation.instructorsignupsuccess});
                     } else {
                         $scope.showerror = true;
                         $scope.errorMsg = data.errorMsg;
+                        toaster.error({title: translation.error, body: data.errorMsg});
                     }
                 });
         };
@@ -215,18 +225,20 @@ angular.module('scotchApp.controllers', []).
                 len2 = keys.length;
                 for (j = 0; j < len2; j++) {
                     key = keys[j];
-                    if (!sections[key]) {
-                        sections[key] = {
-                            rows: [{teachers: [r]}]
-                        }
-                    } else {
-                        var currentRow = sections[key].rows[sections[key].rows.length - 1];
-                        if (currentRow.teachers.length >= 4) {
-                            currentRow = sections[key].rows.push({
-                                teachers: [r]
-                            });
+                    if (key && key.length > 0) {
+                        if (!sections[key]) {
+                            sections[key] = {
+                                rows: [{teachers: [r]}]
+                            }
                         } else {
-                            currentRow.teachers.push(r);
+                            var currentRow = sections[key].rows[sections[key].rows.length - 1];
+                            if (currentRow.teachers.length >= 4) {
+                                currentRow = sections[key].rows.push({
+                                    teachers: [r]
+                                });
+                            } else {
+                                currentRow.teachers.push(r);
+                            }
                         }
                     }
                 }
@@ -252,6 +264,7 @@ angular.module('scotchApp.controllers', []).
                 })
             }
             $scope.filterOptions = _.sortBy(filterOptions, 'name');
+            array = _.sortBy(array, 'key');
             return array;
         };
         $scope.onViewSelect = function (event) {

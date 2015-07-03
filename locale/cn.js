@@ -60,6 +60,8 @@ translation = {
     passworddifferror: '请在密码栏与密码确认栏输入一样的密码',
     generalformerror: '请正确填写表单',
     signupsuccess: '欢迎注册，请点击右边的链接来使用我们的APP',
+    success: '操作成功',
+    error: '错误',
 
     /*=================INSTRUCTOR SIGNUP===================*/
     insturctorsignupheader: '导师注册',
@@ -82,6 +84,8 @@ translation = {
     majors: '专业',
     subjects: '课程',
     fileError: '请选择一张3MB以下的JPG或者PNG格式的图片',
+    selectschool: '请选择学校',
+    selectdegree: '请选择学历',
     instructorsignupsuccess: '欢迎您的申请，我们的招聘人员会审核您的资料并尽快联系你',
 
     /*=================FOOTER===================*/

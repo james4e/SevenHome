@@ -5,7 +5,9 @@ angular.module('scotchApp', [
     'scotchApp.services',
     'ngTagsInput',
     'ngFileUpload',
-    'ngImgCrop'
+    'ngImgCrop',
+    'toaster',
+    'ngAnimate'
 ]).config([
     '$httpProvider',
     function ($httpProvider) {
@@ -21,32 +23,25 @@ angular.module('scotchApp', [
 
     $routeProvider
         .when('/', {
-            templateUrl: 'pages/home.html',
-            controller: 'homeController'
+            templateUrl: 'pages/home.html'
         })
         .when('/instructor', {
-            templateUrl: 'pages/instructor.html',
-            controller: 'instructorController'
+            templateUrl: 'pages/instructor.html'
         })
         .when('/contact', {
-            templateUrl: 'pages/contact.html',
-            controller: 'contactController'
+            templateUrl: 'pages/contact.html'
         })
         .when('/signin', {
-            templateUrl: 'pages/signin.html',
-            controller: 'signInController'
+            templateUrl: 'pages/signin.html'
         })
         .when('/studentreg', {
-            templateUrl: 'pages/student-signup.html',
-            controller: 'studentSignUpController'
+            templateUrl: 'pages/student-signup.html'
         })
         .when('/instructorreg', {
-            templateUrl: 'pages/instructor-signup.html',
-            controller: 'instructorSignUpController'
+            templateUrl: 'pages/instructor-signup.html'
         })
         .when('/mentor', {
-            templateUrl: 'pages/single-mentor.html',
-            controller: 'singleMentorController'
+            templateUrl: 'pages/single-mentor.html'
         })
         .otherwise({
             redirectTo: '/'
