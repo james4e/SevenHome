@@ -55,10 +55,17 @@ angular.module('scotchApp.services', [])
 
         sevenAPI.getDegrees = function () {
             return $http.get('data/degrees.json');
-        }
+        };
 
         sevenAPI.getTeacherList = function () {
-            return $http.get('data/teachers.json');
+            return ($http({
+                url: apiUrlPrefix + '/teacher-list-www',
+                method: 'POST',
+                data: angular.toJson({action: 'load'}),
+                headers: {
+                    'Content-Type': undefined
+                }
+            }));
         };
 
         return sevenAPI;
