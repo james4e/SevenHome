@@ -1,0 +1,66 @@
+<div ng-controller="singleMentorController" class="single-mentor">
+    <div class='full parallax' style='background-image: url(images/team.jpg); color: #fff;'>
+        <div class='row'>
+            <div class='large-12 columns'>
+                <div class='big mod modSectionHeader'>
+                    <div class='special-title centered-text'>
+                        <h2 style='color: #fff'>
+                            {{mentorInfo.name}}
+                        </h2>
+                    </div>
+                    <h3 class='centered-text' style='color: #fff'>{{mentorInfo.school}}</h3>
+                </div>
+            </div>
+        </div>
+        <div class='four spacing'></div>
+    </div>
+    <div class='full'>
+        <div class='row'>
+            <div class='large-8 columns'>
+                <div class='mod modBoxedSlider'>
+                    <div class='slides'>
+                        <div class='slide'>
+                            <img ng-show="mentorInfo.profileImage" width="500" height="500" alt=""
+                                 src="{{mentorInfo.profileImage}}"/>
+
+                            <div ng-show="mentorInfo.profileImage == null"
+                                 class="random-profile"
+                                    style="background:#5BBBBB">
+                                {{mentorInfo.name[0]}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='large-4 columns'>
+                <h3>
+                    {{mentorInfo.name}}
+                </h3>
+                <ul class='info'>
+                    <li>
+                        <strong>Majors:</strong>
+                        {{mentorInfo.majors.join(', ')}}
+                    </li>
+                    <li>
+                        <strong>Subjects:</strong>
+                        {{mentorInfo.subjects.join(', ')}}
+                    </li>
+                </ul>
+                <p>
+                    {{mentorInfo.description}}
+                </p>
+
+                <div class='spacing'></div>
+                <ul class='info'>
+                    <li>
+                        <div class='spacing'></div>
+                        <a href='#/instructor' title='back to work list'>
+                            <i class='icon-layout'></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class='four spacing'></div>
+    </div>
+</div>

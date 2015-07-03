@@ -150,7 +150,7 @@ angular.module('scotchApp.controllers', []).
             return sevenAPIService.getDefaultMajors();
         };
     }).
-    controller('instructorController', function ($scope, sevenAPIService, $routeParams) {
+    controller('instructorController', function ($scope, sevenAPIService, $routeParams, $rootScope, $location) {
         $scope.colors = ['#005F9F', '#1F9DC0', '#5BBBBB', '#FDDB08', '#F5851F',
             '#ED1C24', '#FF7F27', '#EDDE76', '#85AA9E', '#668CA6'];
         $scope.text = {};
@@ -282,6 +282,16 @@ angular.module('scotchApp.controllers', []).
         };
         $scope.refreshView = function () {
             $scope.formatTeacherList($scope.teacherList);
+        };
+        $scope.onMentorSelected = function (mentorInfo) {
+            sevenAPIService.mentorInfo = mentorInfo;
+            $location.path('/mentor');
         }
-    }
-);
+    })
+    .controller('singleMentorController', function ($scope, sevenAPIService, $location) {
+        $scope.mentorInfo = sevenAPIService.mentorInfo;
+        if (!$scope.mentorInfo) {
+            $location.path('/instructor');
+            return;
+        }
+    });

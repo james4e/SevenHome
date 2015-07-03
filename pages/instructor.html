@@ -51,11 +51,18 @@
                             <img ng-show="teacher.profileImage != null" class="avatar" width="250" height="250" alt=""
                                  src="{{teacher.profileImage}}"/>
 
-                            <div ng-show="teacher.profileImage == null" class="random-profile"
-                                 style="background: {{colors[$index]}}">{{teacher.name[0]}}
+                            <div ng-show="teacher.profileImage == null"
+                                 class="random-profile"
+                                 style="background: {{colors[$index]}};cursor: pointer;"
+                                 ng-click="onMentorSelected(teacher)">
+                                {{teacher.name[0]}}
                             </div>
                         </div>
-                        <h4 class="centered-text">{{teacher.name}}</h4>
+                        <h4 class="centered-text"
+                            ng-click="onMentorSelected(teacher)"
+                            style="cursor: pointer;">
+                            {{teacher.name}}
+                        </h4>
 
                         <p class='centered-text'>
                             <span>{{teacher.school}}</span>

@@ -44,6 +44,10 @@ angular.module('scotchApp', [
             templateUrl: 'pages/instructor-signup.html',
             controller: 'instructorSignUpController'
         })
+        .when('/mentor', {
+            templateUrl: 'pages/single-mentor.html',
+            controller: 'singleMentorController'
+        })
         .otherwise({
             redirectTo: '/'
         });
