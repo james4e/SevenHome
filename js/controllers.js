@@ -151,22 +151,25 @@ angular.module('scotchApp.controllers', []).
         };
     }).
     controller('instructorController', function ($scope, sevenAPIService, $routeParams, $rootScope, $location) {
+        $scope.text = {};
+        for (var fieldName in translation) {
+            $scope.text[fieldName] = translation[fieldName];
+        }
         $scope.colors = ['#005F9F', '#1F9DC0', '#5BBBBB', '#FDDB08', '#F5851F',
             '#ED1C24', '#FF7F27', '#EDDE76', '#85AA9E', '#668CA6'];
-        $scope.text = {};
         $scope.view = $routeParams.view || 'school';
         $scope.views = [
             {
                 name: 'school',
-                text: 'School'
+                text: translation.slide2btn1
             },
             {
                 name: 'majors',
-                text: 'Major'
+                text: translation.slide2btn2
             },
             {
                 name: 'subjects',
-                text: 'Subject'
+                text: translation.slide2btn3
             }
         ];
         _.each($scope.views, function (view) {
@@ -174,9 +177,6 @@ angular.module('scotchApp.controllers', []).
             }
         );
         $scope.selectedKeys = [];
-        for (var fieldName in translation) {
-            $scope.text[fieldName] = translation[fieldName];
-        }
         sevenAPIService.getTeacherList().then(function (response) {
             var res = response.data;
             if (res.success) {
@@ -289,6 +289,10 @@ angular.module('scotchApp.controllers', []).
         }
     })
     .controller('singleMentorController', function ($scope, sevenAPIService, $location) {
+        $scope.text = {};
+        for (var fieldName in translation) {
+            $scope.text[fieldName] = translation[fieldName];
+        }
         $scope.mentorInfo = sevenAPIService.mentorInfo;
         if (!$scope.mentorInfo) {
             $location.path('/instructor');

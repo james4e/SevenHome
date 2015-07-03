@@ -83,7 +83,7 @@
                                        ng-model="formData.phone">
 
                                 <tags-input ng-model="formData.subjects"
-                                            placeholder="{{text.subjects}} ({{text.required}})"
+                                            placeholder="{{text.addsubjects}} ({{text.required}})"
                                             add-from-autocomplete-only="true">
                                     <auto-complete source="loadSubjects($query)"></auto-complete>
                                 </tags-input>
@@ -96,7 +96,7 @@
                                 </select>
 
                                 <tags-input ng-model="formData.majors"
-                                            placeholder="{{text.majors}} ({{text.required}})"
+                                            placeholder="{{text.addmajors}} ({{text.required}})"
                                             add-from-autocomplete-only="true">
                                     <auto-complete source="loadMajors($query)"></auto-complete>
                                 </tags-input>

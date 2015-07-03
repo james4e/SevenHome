@@ -20,7 +20,7 @@
                 <ul>
                     <li class="{{view.status}}"
                         ng-repeat="view in views track by $index"]>
-                        <a data-cat="{{view.name}}" ng-click="onViewSelect($event)">By {{view.text}}</a>
+                        <a data-cat="{{view.name}}" ng-click="onViewSelect($event)">{{view.text}}</a>
                     </li>
                 </ul>
             </div>

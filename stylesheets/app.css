@@ -75,6 +75,10 @@
     font-size: 20rem;
 }
 
+.single-mentor strong {
+    text-transform: capitalize;
+}
+
 div.random-profile {
     height: 250px;
     width: 250px;
