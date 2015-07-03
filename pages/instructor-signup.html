@@ -90,7 +90,9 @@
 
                                 <select ng-model="formData.school">
                                     <option value="" disabled selected>Select your school</option>
-                                    <option ng-repeat="school in schools track by $index" value="{{school}}">{{school}}</option>
+                                    <option ng-repeat="school in schools track by $index" value="{{school}}">
+                                        {{school}}
+                                    </option>
                                 </select>
 
                                 <tags-input ng-model="formData.majors"
@@ -109,7 +111,8 @@
 
                                 <select ng-model="formData.country">
                                     <option value="" disabled selected>Select your country</option>
-                                    <option ng-repeat="country in countries" value="{{country.name}}">{{country.name}}</option>
+                                    <option ng-repeat="country in countries" value="{{country.name}}">{{country.name}}
+                                    </option>
                                 </select>
 
                                 <input required class='required' name='state'

@@ -4,7 +4,8 @@ angular.module('scotchApp', [
     'scotchApp.controllers',
     'scotchApp.services',
     'ngTagsInput',
-    'ngFileUpload'
+    'ngFileUpload',
+    'ngImgCrop'
 ]).config([
     '$httpProvider',
     function ($httpProvider) {

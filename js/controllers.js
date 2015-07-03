@@ -150,11 +150,30 @@ angular.module('scotchApp.controllers', []).
             return sevenAPIService.getDefaultMajors();
         };
     }).
-    controller('instructorController', function ($scope, sevenAPIService) {
+    controller('instructorController', function ($scope, sevenAPIService, $routeParams) {
         $scope.colors = ['#005F9F', '#1F9DC0', '#5BBBBB', '#FDDB08', '#F5851F',
             '#ED1C24', '#FF7F27', '#EDDE76', '#85AA9E', '#668CA6'];
         $scope.text = {};
-        $scope.view = 'school';
+        $scope.view = $routeParams.view || 'school';
+        $scope.views = [
+            {
+                name: 'school',
+                text: 'School'
+            },
+            {
+                name: 'majors',
+                text: 'Major'
+            },
+            {
+                name: 'subjects',
+                text: 'Subject'
+            }
+        ];
+        _.each($scope.views, function (view) {
+                view.status = view.name == $scope.view ? 'current' : ''
+            }
+        );
+        $scope.selectedKeys = [];
         for (var fieldName in translation) {
             $scope.text[fieldName] = translation[fieldName];
         }
@@ -200,26 +219,66 @@ angular.module('scotchApp.controllers', []).
                     }
                 }
             }
-            $scope.formattedTeacherList = $scope.changeSectionObjectToArray(sections);
+            $scope.formattedTeacherList = $scope.processSections(sections);
         };
-        $scope.changeSectionObjectToArray = function (sections) {
-            var array = [];
-            $scope.filterOptions = ['All'];
+        $scope.processSections = function (sections) {
+            var array = [],
+                filterOptions = [{
+                    name: 'All',
+                    status: $scope.selectedKeys.length > 0 ? 'inactive' : 'active'
+                }];
             for (var key in sections) {
-                $scope.filterOptions.push(key);
+                var visible = ($scope.selectedKeys.length == 0) || ($scope.selectedKeys.indexOf(key) > -1);
+                filterOptions.push({
+                    name: key,
+                    status: $scope.selectedKeys.indexOf(key) > -1 ? 'active' : 'inactive'
+                });
                 array.push({
                     key: key,
-                    data: sections[key].rows
+                    data: sections[key].rows,
+                    visible: visible
                 })
             }
+            $scope.filterOptions = _.sortBy(filterOptions, 'name');
             return array;
         };
         $scope.onViewSelect = function (event) {
-            $scope.view  = event.target.attributes['data-cat'].value;
+            $scope.selectedKeys = [];
+            $scope.view = event.target.attributes['data-cat'].value;
             $scope.refreshView();
         };
-        $scope.onFilterToggle = function (event) {
-            var element = event
+        $scope.onFilterToggle = function (event, index) {
+            var status = $scope.filterOptions[index].status,
+                key = $scope.filterOptions[index].name;
+            if (status != 'active') {
+                $scope.filterOptions[index].status = 'active';
+                if (key == 'All') {
+                    _.each($scope.filterOptions, function (option) {
+                            if (option.name != 'All') {
+                                option.status = 'inactive';
+                            }
+                        }
+                    );
+                    $scope.selectedKeys = [];
+                } else {
+                    _.each($scope.filterOptions, function (option) {
+                        if (option.name == 'All') {
+                            option.status = 'inactive';
+                        }
+                    });
+                    $scope.selectedKeys.push(key);
+                }
+            }
+            else {
+                $scope.filterOptions[index].status = 'inactive';
+                _.remove($scope.selectedKeys, function (n) {
+                    return n == key;
+                });
+                if ($scope.selectedKeys.length == 0) {
+                    $scope.filterOptions[0].status = 'active';
+                }
+            }
+            $scope.refreshView();
         };
         $scope.refreshView = function () {
             $scope.formatTeacherList($scope.teacherList);

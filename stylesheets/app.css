@@ -49,6 +49,11 @@
     margin-bottom: 0.1rem;
 }
 
+.mentor .gallery-nav li {
+    cursor: pointer;
+    user-select: none;
+}
+
 .mentor .gallery-nav.large a {
     font-size: 1.5rem;
 }

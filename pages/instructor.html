@@ -18,14 +18,9 @@
         <div class="mod modGallery">
             <div class="gallery-nav large">
                 <ul>
-                    <li class="current">
-                        <a data-cat="school" ng-click="onViewSelect($event)">By School</a>
-                    </li>
-                    <li class="">
-                        <a data-cat="majors" ng-click="onViewSelect($event)">By Major</a>
-                    </li>
-                    <li class="">
-                        <a data-cat="subjects" ng-click="onViewSelect($event)">By Subject</a>
+                    <li class="{{view.status}}"
+                        ng-repeat="view in views track by $index"]>
+                        <a data-cat="{{view.name}}" ng-click="onViewSelect($event)">By {{view.text}}</a>
                     </li>
                 </ul>
             </div>
@@ -34,14 +29,16 @@
         <div class="mod modGallery">
             <div class="gallery-nav">
                 <ul>
-                    <li class="{{option=='All' ? 'active' : ''}}" ng-repeat="option in filterOptions">
-                        <a data-cat="{{option}}" ng-click="onFilterToggle($event)">{{option}}</a>
+                    <li class="{{option.status}}"
+                        ng-repeat="option in filterOptions track by $index"
+                        ng-click="onFilterToggle($event, $index)">
+                        <a data-cat="{{option.name}}">{{option.name}}</a>
                     </li>
                 </ul>
             </div>
         </div>
 
-        <div ng-repeat="section in formattedTeacherList">
+        <div ng-repeat="section in formattedTeacherList" ng-show="section.visible == true">
             <div class='row'>
                 <h2>{{section.key}}</h2>
             </div>

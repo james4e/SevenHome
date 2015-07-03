@@ -82,7 +82,7 @@ translation = {
     required: 'required',
     zip: 'zip code',
     weixin: 'wechat',
-    fileError: 'Please select a JPG, PNG file with the size less than 400KB',
+    fileError: 'Please select a JPG, PNG file with the size less than 3MB',
     instructorsignupsuccess: 'Thanks for your application, our hiring specialist will review your information and contact you soon!',
 
     /*=================FOOTER===================*/

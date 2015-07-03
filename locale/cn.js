@@ -79,7 +79,7 @@ translation = {
     state: '州/省',
     zip: '邮编',
     weixin: '微信',
-    fileError: '请选择一张400KB以下的JPG或者PNG格式的图片',
+    fileError: '请选择一张3MB以下的JPG或者PNG格式的图片',
     instructorsignupsuccess: '欢迎您的申请，我们的招聘人员会审核您的资料并尽快联系你',
 
     /*=================FOOTER===================*/
