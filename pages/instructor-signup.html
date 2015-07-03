@@ -76,9 +76,12 @@
                                        placeholder='{{text.name}} ({{text.required}})'
                                        type='text'
                                        ng-model="formData.name">
-                                <input required class='required weixin' name='weixin'
+
+                                <input required class='required' name='weixin'
                                        placeholder='{{text.weixin}} ({{text.required}})'
-                                       type="email" ng-model="formData.email">
+                                       type="text"
+                                       ng-model="formData.weixin">
+
                                 <input class='required' name='phone' placeholder='{{text.phone}}' type='text'
                                        ng-model="formData.phone">
 
