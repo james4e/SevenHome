@@ -281,6 +281,9 @@ angular.module('scotchApp.controllers', []).
             $scope.refreshView();
         };
         $scope.refreshView = function () {
+            if ($scope.teacherList) {
+                $scope.formatTeacherList($scope.teacherList);
+            }
             $scope.formatTeacherList($scope.teacherList);
         };
         $scope.onMentorSelected = function (mentorInfo) {
