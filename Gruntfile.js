@@ -4,8 +4,11 @@ module.exports = function (grunt) {
         concat: {
             'app': {
                 src: [
-                    'js/*.js',
-                    'locale/*.js'
+                    'js/conf.js',
+                    'js/services.js',
+                    'js/controllers.js',
+                    'js/start-app.js',
+                    'js/app.js'
                 ],
                 dest: 'dist/app.js'
             }
@@ -19,23 +22,35 @@ module.exports = function (grunt) {
         less: {
             app: {
                 src: [
-                    'stylesheets/app.css'
+                    'stylesheets/*.css'
                 ],
                 dest: 'dist/app.css'
             }
         },
 
         copy: {
-            index: {
-                src: ['index.html'],
-                dest: 'dist/tmp/index.html'
+            main: {
+                files: [
+                    {expand: true, src: ['images/**'], dest: 'dist'},
+                    {expand: true, src: ['stylesheets/images/**'], dest: 'dist'},
+                    {expand: true, src: ['fonts/**'], dest: 'dist'},
+                    {expand: true, src: ['data/**'], dest: 'dist'},
+                    {expand: true, src: ['pages/**'], dest: 'dist'},
+                    {expand: true, src: ['locale/**'], dest: 'dist'},
+                    {expand: true, src: ['js/start-app.js'], dest: 'dist'}
+                ]
             }
         },
 
         htmlrefs: {
-            index: {
-                src: 'dist/tmp/index.html',
-                dest: 'dist/index.html'
+            dist: {
+                /** @required  - string including grunt glob variables */
+                src: 'index.html',
+                /** @optional  - string directory name*/
+                dest: 'dist/index.html',
+                options: {
+                    version: '0.0.1'
+                }
             }
         }
     });
