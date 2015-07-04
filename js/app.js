@@ -16,7 +16,7 @@ angular.module('scotchApp', [
 ]).config(['$sceDelegateProvider', function ($sceDelegateProvider) {
     $sceDelegateProvider.resourceUrlWhitelist([
         'self',
-        'http://121.199.18.221:8081/v1/teacher/signup'
+        'http://' + globalConfig.serverIP + ':8081/v1/teacher/signup'
     ]);
 }]).config(function ($routeProvider) {
 
