@@ -37,6 +37,12 @@ module.exports = function (grunt) {
                     timestamp: timestamp
                 }
             }
+        },
+
+        serve: {
+            options: {
+                port: 9000
+            }
         }
     });
 
@@ -44,7 +50,9 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-htmlrefs');
+    grunt.loadNpmTasks('grunt-serve');
 
+    grunt.registerTask('server', ['server']);
 // the default task can be run just by typing "grunt" on the command line
     grunt.registerTask('default', ['concat', 'uglify', 'less']);
 
