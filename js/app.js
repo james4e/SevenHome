@@ -5,7 +5,6 @@ angular.module('scotchApp', [
     'scotchApp.services',
     'ngTagsInput',
     'ngFileUpload',
-    'ngImgCrop',
     'toaster',
     'ngAnimate'
 ]).config([
