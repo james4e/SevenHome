@@ -49,7 +49,7 @@ module.exports = function (grunt) {
                 /** @optional  - string directory name*/
                 dest: 'dist/index.html',
                 options: {
-                    version: '0.0.1'
+                    version: '0.0.2'
                 }
             }
         }

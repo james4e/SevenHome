@@ -1,5 +1,5 @@
 angular.module('scotchApp.controllers', []).
-    controller('headerController', ["$scope", "$q", function ($scope, $q) {
+    controller('headerController', ["$scope", function ($scope) {
         $scope.selectCategory = function (lang) {
             console.log(lang);
             localStorage.setItem("seven-education-user-lang", lang);
@@ -11,31 +11,31 @@ angular.module('scotchApp.controllers', []).
             $scope.titles[fieldName] = translation[fieldName];
         }
     }]).
-    controller('homeController', ["$scope", "$q", function ($scope) {
+    controller('homeController', ["$scope", function ($scope) {
         $scope.text = {};
         for (var fieldName in translation) {
             $scope.text[fieldName] = translation[fieldName];
         }
     }]).
-    controller('contactController', ["$scope", "$q", function ($scope) {
+    controller('contactController', ["$scope", function ($scope) {
         $scope.text = {};
         for (var fieldName in translation) {
             $scope.text[fieldName] = translation[fieldName];
         }
     }]).
-    controller('signInController', ["$scope", "$q", function ($scope) {
+    controller('signInController', ["$scope", function ($scope) {
         $scope.text = {};
         for (var fieldName in translation) {
             $scope.text[fieldName] = translation[fieldName];
         }
     }]).
-    controller('footerController', ["$scope", "$q", function ($scope) {
+    controller('footerController', ["$scope", function ($scope) {
         $scope.text = {};
         for (var fieldName in translation) {
             $scope.text[fieldName] = translation[fieldName];
         }
     }]).
-    controller('studentSignUpController', ["$scope", "sevenAPIService", function ($scope, sevenAPIService, toaster) {
+    controller('studentSignUpController', ["$scope", "sevenAPIService", 'toaster', function ($scope, sevenAPIService, toaster) {
         $scope.text = {};
         for (var fieldName in translation) {
             $scope.text[fieldName] = translation[fieldName];
@@ -85,7 +85,7 @@ angular.module('scotchApp.controllers', []).
                 });
         };
     }]).
-    controller('instructorSignUpController', function ($scope, sevenAPIService, toaster) {
+    controller('instructorSignUpController', ["$scope", "sevenAPIService", 'toaster', function ($scope, sevenAPIService, toaster) {
         console.log('instructorSignUpController');
         $scope.text = {};
         for (var fieldName in translation) {
@@ -159,8 +159,8 @@ angular.module('scotchApp.controllers', []).
         $scope.loadMajors = function (query) {
             return sevenAPIService.getDefaultMajors();
         };
-    }).
-    controller('instructorController', function ($scope, sevenAPIService, $routeParams, $rootScope, $location) {
+    }]).
+    controller('instructorController', ["$scope", "sevenAPIService", '$routeParams', '$rootScope', '$location', function ($scope, sevenAPIService, $routeParams, $rootScope, $location) {
         $scope.text = {};
         for (var fieldName in translation) {
             $scope.text[fieldName] = translation[fieldName];
@@ -316,8 +316,8 @@ angular.module('scotchApp.controllers', []).
             $location.path('/mentor');
             window.scrollTo(0, 0);
         };
-    })
-    .controller('singleMentorController', function ($scope, sevenAPIService, $location) {
+    }])
+    .controller('singleMentorController', ['$scope', 'sevenAPIService', '$location', function ($scope, sevenAPIService, $location) {
         $scope.text = {};
         $scope.profileUrlPrefix = sevenAPIService.profileUrlPrefix;
         for (var fieldName in translation) {
@@ -328,4 +328,4 @@ angular.module('scotchApp.controllers', []).
             $location.path('/instructor');
             return;
         }
-    });
+    }]);
