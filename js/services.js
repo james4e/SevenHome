@@ -2,8 +2,8 @@
 angular.module('scotchApp.services', [])
     .factory('sevenAPIService', function ($http, Upload) {
         var sevenAPI = {};
-        sevenAPI.apiUrlPrefix = 'http://198.11.176.132:8081/v1';
-        sevenAPI.profileUrlPrefix = 'http://198.11.176.132:8081/profile/';
+        sevenAPI.apiUrlPrefix = 'http://121.199.18.221:8081/v1';
+        sevenAPI.profileUrlPrefix = 'http://121.199.18.221:8081/profile/';
 
 
         /**************************MENTOR**************************/

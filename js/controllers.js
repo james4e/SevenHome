@@ -83,7 +83,7 @@ angular.module('scotchApp.controllers', []).
                         toaster.error({title: translation.error, body: data.errorMsg});
                     }
                 });
-        }
+        };
     }]).
     controller('instructorSignUpController', function ($scope, sevenAPIService, toaster) {
         console.log('instructorSignUpController');
@@ -184,7 +184,7 @@ angular.module('scotchApp.controllers', []).
             }
         ];
         _.each($scope.views, function (view) {
-                view.status = view.name == $scope.view ? 'current' : ''
+                view.status = view.name == $scope.view ? 'current' : '';
             }
         );
         $scope.selectedKeys = [];
@@ -203,7 +203,7 @@ angular.module('scotchApp.controllers', []).
 
                 });
                 $scope.teacherList = res.data;
-                $scope.formatTeacherList(res.data)
+                $scope.formatTeacherList(res.data);
             } else {
                 $scope.showerror = true;
                 $scope.errorMsg = res.errorMsg;
@@ -229,7 +229,7 @@ angular.module('scotchApp.controllers', []).
                         if (!sections[key]) {
                             sections[key] = {
                                 rows: [{teachers: [r]}]
-                            }
+                            };
                         } else {
                             var currentRow = sections[key].rows[sections[key].rows.length - 1];
                             if (currentRow.teachers.length >= 4) {
@@ -252,7 +252,7 @@ angular.module('scotchApp.controllers', []).
                     status: $scope.selectedKeys.length > 0 ? 'inactive' : 'active'
                 }];
             for (var key in sections) {
-                var visible = ($scope.selectedKeys.length == 0) || ($scope.selectedKeys.indexOf(key) > -1);
+                var visible = ($scope.selectedKeys.length === 0) || ($scope.selectedKeys.indexOf(key) > -1);
                 filterOptions.push({
                     name: key,
                     status: $scope.selectedKeys.indexOf(key) > -1 ? 'active' : 'inactive'
@@ -261,7 +261,7 @@ angular.module('scotchApp.controllers', []).
                     key: key,
                     data: sections[key].rows,
                     visible: visible
-                })
+                });
             }
             $scope.filterOptions = _.sortBy(filterOptions, 'name');
             array = _.sortBy(array, 'key');
@@ -299,7 +299,7 @@ angular.module('scotchApp.controllers', []).
                 _.remove($scope.selectedKeys, function (n) {
                     return n == key;
                 });
-                if ($scope.selectedKeys.length == 0) {
+                if ($scope.selectedKeys.length === 0) {
                     $scope.filterOptions[0].status = 'active';
                 }
             }
@@ -315,7 +315,7 @@ angular.module('scotchApp.controllers', []).
             sevenAPIService.mentorInfo = mentorInfo;
             $location.path('/mentor');
             window.scrollTo(0, 0);
-        }
+        };
     })
     .controller('singleMentorController', function ($scope, sevenAPIService, $location) {
         $scope.text = {};
