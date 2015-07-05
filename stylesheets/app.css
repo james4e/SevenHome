@@ -23,7 +23,7 @@
 }
 
 .upload-button {
-    width: 300px;
+    max-width: 400px;
     background-color: #F9CE06;
     border-radius: 3px;
     color: #FFFFFF;
@@ -49,13 +49,20 @@
     margin-bottom: 0.1rem;
 }
 
+.mentor .gallery-nav ul {
+    cursor: pointer;
+    user-select: none;
+    margin: 0 0.5rem 1.4rem 0.5rem !important;
+}
+
 .mentor .gallery-nav li {
     cursor: pointer;
     user-select: none;
+    margin: 0.25rem 0.25rem !important;
 }
 
 .mentor .gallery-nav.large a {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
 }
 
 .mentor .gallery-nav li.active {

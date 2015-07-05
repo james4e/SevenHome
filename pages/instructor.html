@@ -46,11 +46,11 @@
             <div ng-repeat="row in section.data"
                  class="row">
                 <div ng-repeat="teacher in row.teachers"
-                     class='small-6 medium-3 large-3 columns'>
+                     class='small-12 medium-6 large-3 columns'>
                     <div class='mod modTeamMember'>
                         <div class='member'>
                             <div ng-show="teacher.profileImage"
-                                 style="cursor: pointer;width:250px;height:250px;
+                                 style="cursor: pointer;width:250px;height:250px;margin:0 auto;
                                  background:url('{{profileUrlPrefix}}{{teacher.profileImage}}') no-repeat center center;
                                  background-size:250px;"
                                  ng-click="onMentorSelected(teacher)">

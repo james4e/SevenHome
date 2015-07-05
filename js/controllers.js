@@ -247,10 +247,7 @@ angular.module('scotchApp.controllers', []).
         };
         $scope.processSections = function (sections) {
             var array = [],
-                filterOptions = [{
-                    name: 'All',
-                    status: $scope.selectedKeys.length > 0 ? 'inactive' : 'active'
-                }];
+                filterOptions = [];
             for (var key in sections) {
                 var visible = ($scope.selectedKeys.length === 0) || ($scope.selectedKeys.indexOf(key) > -1);
                 filterOptions.push({
@@ -264,6 +261,10 @@ angular.module('scotchApp.controllers', []).
                 });
             }
             $scope.filterOptions = _.sortBy(filterOptions, 'name');
+            $scope.filterOptions.splice(0, 0, {
+                name: 'All',
+                status: $scope.selectedKeys.length > 0 ? 'inactive' : 'active'
+            });
             array = _.sortBy(array, 'key');
             return array;
         };
