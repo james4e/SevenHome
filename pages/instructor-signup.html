@@ -55,10 +55,12 @@
                                        type="email" ng-model="formData.email">
                                 <input required class='required' name='password'
                                        placeholder='{{text.password}} ({{text.required}})'
-                                       type='password' ng-model="formData.password">
+                                       type='password' ng-model="formData.password"
+                                       ng-minlength="6">
                                 <input required class='required' name='password1'
                                        placeholder='{{text.confirmpassword}} ({{text.required}})'
-                                       type='password' ng-model="formData.password1">
+                                       type='password' ng-model="formData.password1"
+                                       ng-minlength="6">
 
                                 <div ngf-select ng-model="profileImage" class="upload-button"
                                      ngf-multiple="false" ngf-accept="'*.jpg,*.png'" ng-model-rejected="rejFiles"
@@ -138,7 +140,8 @@
                                           ng-model="formData.description"></textarea>
 
                                 <input required class="button white" type="submit" value="{{text.submit}}"
-                                       ng-click="submitForm()">
+                                       ng-click="submitForm()"
+                                       ng-disabled="disableSubmitBtn">
 
                                 <!--THIS IS A HIDDEN FIELD TO PREVENT SPAM-->
                                 <label><input type="text" class="spam-field" name="spam"
