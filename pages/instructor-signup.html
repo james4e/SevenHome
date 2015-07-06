@@ -91,13 +91,12 @@
                                             add-from-autocomplete-only="true">
                                     <auto-complete source="loadSubjects($query)"
                                                    min-length="0"
-                                                   debounce-delay="0">
-
+                                                   max-results-to-show="30">
                                     </auto-complete>
                                 </tags-input>
 
                                 <select ng-model="formData.school"
-                                        ng-options="school for school in schools"
+                                        ng-options="school.text for school in schools"
                                         data-options="select.options">
                                     <option value="" disabled selected>{{text.selectschool}}</option>
                                 </select>
@@ -107,19 +106,15 @@
                                             add-from-autocomplete-only="true">
                                     <auto-complete source="loadMajors($query)"
                                                    min-length="0"
-                                                   debounce-delay="0">
-
+                                                   max-results-to-show="30">
                                     </auto-complete>
                                 </tags-input>
 
                                 <select ng-model="formData.degree"
-                                        ng-options="degree for degree in degrees"
+                                        ng-options="degree.text for degree in degrees"
                                         data-options="select.options">
                                     <option value="" disabled selected>{{text.selectdegree}}</option>
                                 </select>
-
-                                <input class='required' name='job' placeholder='{{text.jobtitle}}' type='text'
-                                       ng-model="formData.jobTitle">
 
                                 <select ng-model="formData.country"
                                         ng-options="country.name for country in countries"

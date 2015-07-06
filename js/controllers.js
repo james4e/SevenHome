@@ -104,6 +104,12 @@ angular.module('scotchApp.controllers', []).
         sevenAPIService.getDegrees().then(function (response) {
             $scope.degrees = response.data;
         });
+        sevenAPIService.getSubjects().then(function (response) {
+            $scope.subjects = response.data;
+        });
+        sevenAPIService.getMajors().then(function (response) {
+            $scope.majors = response.data;
+        });
         $scope.submitForm = function () {
             $scope.showsuccess = false;
             $scope.showerror = false;
@@ -137,6 +143,7 @@ angular.module('scotchApp.controllers', []).
                     if (data.success) {
                         $scope.showsuccess = true;
                         $scope.formData = {};
+                        $scope.profileImage = null;
                         window.scrollTo(0, 0);
                         toaster.success({title: translation.success, body: translation.instructorsignupsuccess});
                     } else {
@@ -154,10 +161,10 @@ angular.module('scotchApp.controllers', []).
             }
         };
         $scope.loadSubjects = function (query) {
-            return sevenAPIService.getDefaultSubjects();
+            return _.sortBy($scope.subjects, 'text');
         };
         $scope.loadMajors = function (query) {
-            return sevenAPIService.getDefaultMajors();
+            return _.sortBy($scope.majors, 'text');
         };
     }]).
     controller('instructorController', ["$scope", "sevenAPIService", '$routeParams', '$rootScope', '$location', function ($scope, sevenAPIService, $routeParams, $rootScope, $location) {

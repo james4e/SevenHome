@@ -4,21 +4,19 @@ angular.module('scotchApp.services', [])
         var sevenAPI = {};
         sevenAPI.apiUrlPrefix = 'http://' + globalConfig.serverIP + ':8081/v1';
         sevenAPI.profileUrlPrefix = 'http://' + globalConfig.serverIP + ':8081/profile/';
-
-
-        /**************************MENTOR**************************/
-        sevenAPI.loadMentorList = function () {
-            return $http.get('data/mentor-list.json');
-        };
-
+        sevenAPI.linUrlPrefix = 'https://shiyang-fei.github.io/data';
 
         /**************************SIGN UP**************************/
         sevenAPI.mentorSignUp = function (scope) {
+            var submissionData = scope.formData;
+            submissionData.country = submissionData.country.name;
+            submissionData.degree = submissionData.degree.text;
+            submissionData.school = submissionData.school.text;
             return (
                 Upload.upload({
                     url: sevenAPI.apiUrlPrefix + '/teacher/signup',
                     method: 'POST',
-                    fields: scope.formData,
+                    fields: submissionData,
                     file: scope.profileImage[0],
                     fileFormDataName: 'profileImage',
                     headers: {
@@ -39,24 +37,24 @@ angular.module('scotchApp.services', [])
             }));
         };
 
-        sevenAPI.getDefaultSubjects = function (query) {
-            return $http.get('data/default-subjects.json');
+        sevenAPI.getSubjects = function (query) {
+            return $http.get(sevenAPI.linUrlPrefix + '/default-subjects.json');
         };
 
-        sevenAPI.getDefaultMajors = function (query) {
-            return $http.get('data/default-majors.json');
+        sevenAPI.getMajors = function (query) {
+            return $http.get(sevenAPI.linUrlPrefix + '/default-majors.json');
         };
 
         sevenAPI.getCountries = function (query) {
-            return $http.get('data/countries.json');
+            return $http.get(sevenAPI.linUrlPrefix + '/countries.json');
         };
 
         sevenAPI.getSchools = function () {
-            return $http.get('data/universities.json');
+            return $http.get(sevenAPI.linUrlPrefix + '/universities.json');
         };
 
         sevenAPI.getDegrees = function () {
-            return $http.get('data/degrees.json');
+            return $http.get(sevenAPI.linUrlPrefix + '/degrees.json');
         };
 
         sevenAPI.getTeacherList = function () {
