@@ -183,15 +183,7 @@ angular.module('scotchApp.controllers', []).
                     $scope.invalidFileError = null;
                 }
             };
-            $scope.refreshSchools = function (query) {
-                if (query.length < 3) {
-                    $scope.filteredSchools = [];
-                } else {
-                    $scope.filteredSchools = _.filter($scope.schools, function (school) {
-                        return school.text.toLowerCase().indexOf(query.toLowerCase()) > -1;
-                    });
-                }
-            };
+
             $scope.loadSubjects = function (query) {
                 return _.sortBy($scope.subjects, 'text');
             };
