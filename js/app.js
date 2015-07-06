@@ -6,7 +6,9 @@ angular.module('scotchApp', [
     'ngTagsInput',
     'ngFileUpload',
     'toaster',
-    'ngAnimate'
+    'ngAnimate',
+    'ngSanitize',
+    'ui.select'
 ]).config([
     '$httpProvider',
     function ($httpProvider) {

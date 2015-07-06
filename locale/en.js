@@ -90,6 +90,10 @@ translation = {
     selectschool: 'Select your school',
     selectdegree: 'Select your degree',
     instructorsignupsuccess: 'Thanks for your application, our hiring specialist will review your information and contact you soon!',
+    imagemissing: 'Please upload a profile image',
+    majormissing: 'Please fill in your major',
+    subjectmissing: 'Please fill in your subjects',
+    querynotice: 'Please input at least 3 letters to query for your school',
 
     /*=================FOOTER===================*/
     copyright: 'Seven Education. All rights reserved.',

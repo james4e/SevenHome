@@ -95,11 +95,16 @@
                                     </auto-complete>
                                 </tags-input>
 
-                                <select ng-model="formData.school"
-                                        ng-options="school.text for school in schools"
-                                        data-options="select.options">
-                                    <option value="" disabled selected>{{text.selectschool}}</option>
-                                </select>
+                                <p>＊{{text.querynotice}}</p>
+                                <ui-select ng-model="formData.school" theme="selectize" ng-disabled="disabled">
+                                    <ui-select-match placeholder="{{text.selectschool}}">{{$select.selected.text}}</ui-select-match>
+                                    <ui-select-choices
+                                            repeat="school in filteredSchools track by $index"
+                                            refresh="refreshSchools($select.search)"
+                                            refresh-delay="0">
+                                        <span ng-bind-html="school.text | highlight: $select.search"></span>
+                                    </ui-select-choices>
+                                </ui-select>
 
                                 <tags-input ng-model="formData.majors"
                                             placeholder="{{text.addmajors}} ({{text.required}})"

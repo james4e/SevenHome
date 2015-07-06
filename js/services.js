@@ -9,9 +9,10 @@ angular.module('scotchApp.services', [])
         /**************************SIGN UP**************************/
         sevenAPI.mentorSignUp = function (scope) {
             var submissionData = scope.formData;
-            submissionData.country = submissionData.country.name || submissionData.country;
-            submissionData.degree = submissionData.degree.text || submissionData.degree;
-            submissionData.school = submissionData.school.text || submissionData.school;
+            if (submissionData.country) {submissionData.country = submissionData.country.name || submissionData.country;}
+            if (submissionData.degree) {submissionData.degree = submissionData.degree.text || submissionData.degree;}
+            if (submissionData.school) {submissionData.school = submissionData.school.text || submissionData.school;}
+
             return (
                 Upload.upload({
                     url: sevenAPI.apiUrlPrefix + '/teacher/signup',

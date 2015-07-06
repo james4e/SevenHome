@@ -85,88 +85,120 @@ angular.module('scotchApp.controllers', []).
                 });
         };
     }]).
-    controller('instructorSignUpController', ["$scope", "sevenAPIService", 'toaster', function ($scope, sevenAPIService, toaster) {
-        console.log('instructorSignUpController');
-        $scope.text = {};
-        for (var fieldName in translation) {
-            $scope.text[fieldName] = translation[fieldName];
-        }
-        $scope.formData = {};
-        $scope.profileImage = null;
-        $scope.showsuccess = false;
-        $scope.showerror = false;
-        sevenAPIService.getCountries().then(function (response) {
-            $scope.countries = response.data;
-        });
-        sevenAPIService.getSchools().then(function (response) {
-            $scope.schools = response.data;
-        });
-        sevenAPIService.getDegrees().then(function (response) {
-            $scope.degrees = response.data;
-        });
-        sevenAPIService.getSubjects().then(function (response) {
-            $scope.subjects = response.data;
-        });
-        sevenAPIService.getMajors().then(function (response) {
-            $scope.majors = response.data;
-        });
-        $scope.submitForm = function () {
+    controller('instructorSignUpController', ["$scope", "sevenAPIService", 'toaster', '$timeout', '$http',
+        function ($scope, sevenAPIService, toaster, $timeout, $http) {
+            console.log('instructorSignUpController');
+            $scope.text = {};
+            for (var fieldName in translation) {
+                $scope.text[fieldName] = translation[fieldName];
+            }
+            $scope.formData = {};
+            $scope.profileImage = null;
             $scope.showsuccess = false;
             $scope.showerror = false;
-            var data = $scope.formData;
-            if (data.spam && data.spam.length > 0) {
-                return;
-            }
-            if ($scope.instructorSignUp.$valid) {
-                if (data.password == data.password1) {
-                    $scope.triggerSubmission();
+            sevenAPIService.getCountries().then(function (response) {
+                $scope.countries = response.data;
+            });
+            sevenAPIService.getSchools().then(function (response) {
+                $scope.schools = response.data;
+            });
+            sevenAPIService.getDegrees().then(function (response) {
+                $scope.degrees = response.data;
+            });
+            sevenAPIService.getSubjects().then(function (response) {
+                $scope.subjects = response.data;
+            });
+            sevenAPIService.getMajors().then(function (response) {
+                $scope.majors = response.data;
+            });
+            $scope.submitForm = function () {
+                $scope.showsuccess = false;
+                $scope.showerror = false;
+                var data = $scope.formData;
+                if (data.spam && data.spam.length > 0) {
+                    return;
                 }
-                else {
-                    $scope.showerror = true;
-                    $scope.errorMsg = translation.passworddifferror;
-                    toaster.error({title: translation.error, body: translation.passworddifferror});
-                }
-            } else {
-                $scope.showerror = true;
-                $scope.errorMsg = translation.generalformerror;
-                toaster.error({title: translation.error, body: translation.generalformerror});
-            }
-        };
-        $scope.triggerSubmission = function () {
-            $scope.showerror = false;
-            $scope.signupSuccessText = translation.instructorsignupsuccess;
-
-
-            sevenAPIService.mentorSignUp($scope).
-                then(function (response) {
-                    var data = response.data;
-                    if (data.success) {
-                        $scope.showsuccess = true;
-                        $scope.formData = {};
-                        $scope.profileImage = null;
-                        window.scrollTo(0, 0);
-                        toaster.success({title: translation.success, body: translation.instructorsignupsuccess});
-                    } else {
-                        $scope.showerror = true;
-                        $scope.errorMsg = data.errorMsg;
-                        toaster.error({title: translation.error, body: data.errorMsg});
+                if ($scope.instructorSignUp.$valid) {
+                    var error = $scope.isFormFieldsInvalid(data);
+                    if (!error) {
+                        $scope.triggerSubmission();
                     }
-                });
-        };
-        $scope.onFileChange = function (files, rejectedFiles) {
-            if (rejectedFiles.length > 0) {
-                $scope.invalidFileError = $scope.text.fileError;
-            } else {
-                $scope.invalidFileError = null;
-            }
-        };
-        $scope.loadSubjects = function (query) {
-            return _.sortBy($scope.subjects, 'text');
-        };
-        $scope.loadMajors = function (query) {
-            return _.sortBy($scope.majors, 'text');
-        };
-    }]).
+                    else {
+                        $scope.showerror = true;
+                        $scope.errorMsg = error;
+                        toaster.error({title: translation.error, body: error});
+                    }
+                } else {
+                    $scope.showerror = true;
+                    $scope.errorMsg = translation.generalformerror;
+                    toaster.error({title: translation.error, body: translation.generalformerror});
+                }
+            };
+            $scope.isFormFieldsInvalid = function (data) {
+                if (data.password != data.password1) {
+                    return translation.passworddifferror;
+                }
+                if (!$scope.profileImage) {
+                    return translation.imagemissing;
+                }
+                if (!$scope.formData.majors || $scope.formData.majors.length <= 0) {
+                    return translation.majormissing;
+                }
+                if (!$scope.formData.subjects || $scope.formData.subjects.length <= 0) {
+                    return translation.subjectmissing;
+                }
+                if (!$scope.formData.degree) {
+                    return translation.generalformerror;
+                }
+                if (!$scope.formData.country) {
+                    return translation.generalformerror;
+                }
+                return false;
+            };
+            $scope.triggerSubmission = function () {
+                $scope.showerror = false;
+                $scope.signupSuccessText = translation.instructorsignupsuccess;
+
+
+                sevenAPIService.mentorSignUp($scope).
+                    then(function (response) {
+                        var data = response.data;
+                        if (data.success) {
+                            $scope.showsuccess = true;
+                            $scope.formData = {};
+                            $scope.profileImage = null;
+                            window.scrollTo(0, 0);
+                            toaster.success({title: translation.success, body: translation.instructorsignupsuccess});
+                        } else {
+                            $scope.showerror = true;
+                            $scope.errorMsg = data.errorMsg;
+                            toaster.error({title: translation.error, body: data.errorMsg});
+                        }
+                    });
+            };
+            $scope.onFileChange = function (files, rejectedFiles) {
+                if (rejectedFiles.length > 0) {
+                    $scope.invalidFileError = $scope.text.fileError;
+                } else {
+                    $scope.invalidFileError = null;
+                }
+            };
+            $scope.refreshSchools = function (query) {
+                if (query.length < 3) {
+                    $scope.filteredSchools = [];
+                } else {
+                    $scope.filteredSchools = _.filter($scope.schools, function (school) {
+                        return school.text.toLowerCase().indexOf(query.toLowerCase()) > -1;
+                    });
+                }
+            };
+            $scope.loadSubjects = function (query) {
+                return _.sortBy($scope.subjects, 'text');
+            };
+            $scope.loadMajors = function (query) {
+                return _.sortBy($scope.majors, 'text');
+            };
+        }]).
     controller('instructorController', ["$scope", "sevenAPIService", '$routeParams', '$rootScope', '$location', function ($scope, sevenAPIService, $routeParams, $rootScope, $location) {
         $scope.text = {};
         for (var fieldName in translation) {
