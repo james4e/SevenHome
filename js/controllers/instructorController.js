@@ -1,90 +1,7 @@
-angular.module('scotchApp.controllers', []).
-    controller('headerController', ["$scope", function ($scope) {
-        $scope.selectCategory = function (lang) {
-            console.log(lang);
-            localStorage.setItem("seven-education-user-lang", lang);
-            window.location.reload();
-        };
-
-        $scope.titles = {};
-        for (var fieldName in translation) {
-            $scope.titles[fieldName] = translation[fieldName];
-        }
-    }]).
-    controller('homeController', ["$scope", function ($scope) {
-        $scope.text = {};
-        for (var fieldName in translation) {
-            $scope.text[fieldName] = translation[fieldName];
-        }
-    }]).
-    controller('contactController', ["$scope", function ($scope) {
-        $scope.text = {};
-        for (var fieldName in translation) {
-            $scope.text[fieldName] = translation[fieldName];
-        }
-    }]).
-    controller('signInController', ["$scope", function ($scope) {
-        $scope.text = {};
-        for (var fieldName in translation) {
-            $scope.text[fieldName] = translation[fieldName];
-        }
-    }]).
-    controller('footerController', ["$scope", function ($scope) {
-        $scope.text = {};
-        for (var fieldName in translation) {
-            $scope.text[fieldName] = translation[fieldName];
-        }
-    }]).
-    controller('studentSignUpController', ["$scope", "sevenAPIService", 'toaster', function ($scope, sevenAPIService, toaster) {
-        $scope.text = {};
-        for (var fieldName in translation) {
-            $scope.text[fieldName] = translation[fieldName];
-        }
-
-        $scope.formData = {};
-        $scope.showsuccess = false;
-        $scope.showerror = false;
-        $scope.submitForm = function () {
-            $scope.showsuccess = false;
-            $scope.showerror = false;
-            var data = $scope.formData;
-            if (data.spam && data.spam.length > 0) {
-                return;
-            }
-            if ($scope.studentSignUp.$valid) {
-                if (data.password == data.password1) {
-                    $scope.triggerSubmission();
-                }
-                else {
-                    $scope.showerror = true;
-                    $scope.errorMsg = translation.passworddifferror;
-                    toaster.error({title: translation.error, body: translation.passworddifferror});
-                }
-            } else {
-                $scope.showerror = true;
-                $scope.errorMsg = translation.generalformerror;
-                toaster.error({title: translation.error, body: translation.generalformerror});
-            }
-        };
-        $scope.triggerSubmission = function () {
-            $scope.showerror = false;
-            $scope.signupSuccessText = translation.signupsuccess;
-
-            sevenAPIService.studentSignUp($scope.formData)
-                .then(function (response) {
-                    var data = response.data;
-                    if (data.success) {
-                        $scope.showsuccess = true;
-                        $scope.formData = {};
-                        toaster.success({title: translation.success, body: translation.signupsuccess});
-                    } else {
-                        $scope.showerror = true;
-                        $scope.errorMsg = data.errorMsg;
-                        toaster.error({title: translation.error, body: data.errorMsg});
-                    }
-                });
-        };
-    }]).
+/**
+ * Created by shiyangfei on 7/6/15.
+ */
+angular.module('scotchApp.controllers.instructorController', []).
     controller('instructorController', ["$scope", "sevenAPIService", '$routeParams', '$rootScope', '$location', function ($scope, sevenAPIService, $routeParams, $rootScope, $location) {
         $scope.text = {};
         for (var fieldName in translation) {
@@ -243,15 +160,3 @@ angular.module('scotchApp.controllers', []).
             window.scrollTo(0, 0);
         };
     }])
-    .controller('singleMentorController', ['$scope', 'sevenAPIService', '$location', function ($scope, sevenAPIService, $location) {
-        $scope.text = {};
-        $scope.profileUrlPrefix = sevenAPIService.profileUrlPrefix;
-        for (var fieldName in translation) {
-            $scope.text[fieldName] = translation[fieldName];
-        }
-        $scope.mentorInfo = sevenAPIService.mentorInfo;
-        if (!$scope.mentorInfo) {
-            $location.path('/instructor');
-            return;
-        }
-    }]);

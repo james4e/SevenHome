@@ -1,7 +1,10 @@
 angular.module('scotchApp', [
     'ngLoadScript',
     'ngRoute',
-    'scotchApp.controllers',
+    'scotchApp.controllers.otherController',
+    'scotchApp.controllers.instructorSignUpController',
+    'scotchApp.controllers.studentSignUpController',
+    'scotchApp.controllers.instructorController',
     'scotchApp.services',
     'ngTagsInput',
     'ngFileUpload',
