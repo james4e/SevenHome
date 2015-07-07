@@ -6,7 +6,7 @@ module.exports = function (grunt) {
                 src: [
                     'js/conf.js',
                     'js/services.js',
-                    'js/controllers.js',
+                    'js/controllers/*.js',
                     'js/start-app.js',
                     'js/app.js'
                 ],
@@ -31,7 +31,6 @@ module.exports = function (grunt) {
         copy: {
             main: {
                 files: [
-                    {expand: true, src: ['images/**'], dest: 'dist'},
                     {expand: true, src: ['stylesheets/images/**'], dest: 'dist'},
                     {expand: true, src: ['fonts/**'], dest: 'dist'},
                     {expand: true, src: ['data/**'], dest: 'dist'},
