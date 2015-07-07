@@ -87,6 +87,8 @@ translation = {
     selectschool: '请选择学校',
     selectdegree: '请选择学历',
     instructorsignupsuccess: '欢迎您的申请，我们的招聘人员会审核您的资料并尽快联系你',
+    majorserror: '请选择专业',
+    subjectserror: '请选择主讲课程',
 
     /*=================FOOTER===================*/
     copyright: '第七教育',

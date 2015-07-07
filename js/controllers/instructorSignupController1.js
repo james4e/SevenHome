@@ -56,11 +56,14 @@ angular.module('scotchApp.controllers.instructorSignUpController', []).
             if (!$scope.profileImage || $scope.profileImage.length == 0) {
                 return translation.selectprofile;
             }
-            if (!data.majors || data.majors.length == 0) {
-                return translation.passworddifferror;
-            }
             if (!$scope.profileImage || $scope.profileImage.length == 0) {
                 return translation.selectprofile;
+            }
+            if (!data.majors || data.majors.length == 0) {
+                return translation.majorserror;
+            }
+            if (!data.subjects || data.subjects.length == 0) {
+                return translation.subjectserror;
             }
         };
         $scope.triggerSubmission = function () {
