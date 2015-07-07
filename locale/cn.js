@@ -89,6 +89,16 @@ translation = {
     instructorsignupsuccess: '欢迎您的申请，我们的招聘人员会审核您的资料并尽快联系你',
     majorserror: '请选择专业',
     subjectserror: '请选择主讲课程',
+    countryerror: '请选择您所在的国家',
+    degreeerror: '请选择您的学历',
+    passwordnotice: '密码长度应在6到12个字符之间',
+    emailerror: '请输入正确的电子邮件地址',
+    passworderror: '请输入有效的密码',
+    namerror: '请输入您的姓名',
+    weixinerror: '请输入正确的微信ID',
+    stateerror: '请输入有效的州／省',
+    ziperror: '请输入有效的邮编',
+    descriptionerror: '请输入个人介绍',
 
     /*=================FOOTER===================*/
     copyright: '第七教育',

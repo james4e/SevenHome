@@ -50,17 +50,16 @@
                                 </p>
                             </div>
                             <div class='medium-12 columns signup-container'>
-                                <input required class='required email' name='email'
+                                <input class='required email' name='email'
                                        placeholder='{{text.email}} ({{text.required}})'
                                        type="email" ng-model="formData.email">
-                                <input required class='required' name='password'
+                                <p>*{{text.passwordnotice}}</p>
+                                <input class='required' name='password'
                                        placeholder='{{text.password}} ({{text.required}})'
-                                       type='password' ng-model="formData.password"
-                                       ng-minlength="6">
-                                <input required class='required' name='password1'
+                                       type='password' ng-model="formData.password">
+                                <input class='required' name='password1'
                                        placeholder='{{text.confirmpassword}} ({{text.required}})'
-                                       type='password' ng-model="formData.password1"
-                                       ng-minlength="6">
+                                       type='password' ng-model="formData.password1">
 
                                 <div ngf-select ng-model="profileImage" class="upload-button"
                                      ngf-multiple="false" ngf-accept="'*.jpg,*.png'" ng-model-rejected="rejFiles"
@@ -75,12 +74,12 @@
                                 <img ng-show="profileImage[0] != null" ngf-src="profileImage[0]"
                                      class="thumb profile-review" width="100px" height="100px">
 
-                                <input required class='required' name='name'
+                                <input class='required' name='name'
                                        placeholder='{{text.name}} ({{text.required}})'
                                        type='text'
                                        ng-model="formData.name">
 
-                                <input required class='required' name='weixin'
+                                <input class='required' name='weixin'
                                        placeholder='{{text.weixin}} ({{text.required}})'
                                        type="text"
                                        ng-model="formData.weixin">
@@ -125,21 +124,21 @@
                                     </option>
                                 </select>
 
-                                <input required class='required' name='state'
+                                <input class='required' name='state'
                                        placeholder='{{text.state}} ({{text.required}})'
                                        type='text'
                                        ng-model="formData.state">
 
-                                <input required class='required' name='zip'
+                                <input class='required' name='zip'
                                        placeholder='{{text.zip}} ({{text.required}})'
                                        type='text'
                                        ng-model="formData.zip">
 
-                                <textarea required name='introduction'
+                                <textarea name='description'
                                           placeholder='{{text.selfintro}} ({{text.required}})'
                                           ng-model="formData.description"></textarea>
 
-                                <input required class="button white" type="submit" value="{{text.submit}}"
+                                <input class="button white" type="submit" value="{{text.submit}}"
                                        ng-click="submitForm()"
                                        ng-disabled="disableSubmitBtn">
 

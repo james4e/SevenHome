@@ -92,6 +92,16 @@ translation = {
     instructorsignupsuccess: 'Thanks for your application, our hiring specialist will review your information and contact you soon!',
     majorserror: 'Please select your majors',
     subjectserror: 'Please select your subjects',
+    countryerror: 'Please select valid country',
+    degreeerror: 'Please select valid degree',
+    passwordnotice: 'Please input a password between 6 to 12 characters',
+    emailerror: 'Please input a valid email',
+    passworderror: 'Please input a valid password',
+    namerror: 'Please input a valid name',
+    weixinerror: 'Please input a valid wechat',
+    stateerror: 'Please input a valid state/province',
+    ziperror: 'Please input a valid zip',
+    descriptionerror: 'Please input a valid description',
 
     /*=================FOOTER===================*/
     copyright: 'Seven Education. All rights reserved.',

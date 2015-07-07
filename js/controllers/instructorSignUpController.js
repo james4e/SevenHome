@@ -44,11 +44,12 @@ angular.module('scotchApp.controllers.instructorSignUpController', []).
             if (data.spam && data.spam.length > 0) {
                 return 'We do not accept spam!';
             }
-            var generalErrorObject = $scope.instructorSignUp.$error;
-            for (var type in generalErrorObject) {
-                if (generalErrorObject[type]) {
-                    return translation.generalformerror;
-                }
+            if (!data.email || !/\S+@\S+\.\S+/.test(data.email)) {
+                return translation.emailerror;
+            }
+            if (!data.password || !data.password1 || data.password.length < 6
+             || data.password.length > 12 || data.password1.length < 6 || data.password1.length > 12) {
+                return translation.passworderror;
             }
             if (data.password != data.password1) {
                 return translation.passworddifferror;
@@ -56,14 +57,32 @@ angular.module('scotchApp.controllers.instructorSignUpController', []).
             if (!$scope.profileImage || $scope.profileImage.length == 0) {
                 return translation.selectprofile;
             }
-            if (!$scope.profileImage || $scope.profileImage.length == 0) {
-                return translation.selectprofile;
+            if (!data.name) {
+                return translation.namerror;
+            }
+            if (!data.weixin) {
+                return translation.weixinerror;
+            }
+            if (!data.subjects || data.subjects.length == 0) {
+                return translation.subjectserror;
             }
             if (!data.majors || data.majors.length == 0) {
                 return translation.majorserror;
             }
-            if (!data.subjects || data.subjects.length == 0) {
-                return translation.subjectserror;
+            if (!data.degree || data.degree.length == 0) {
+                return translation.degreeerror;
+            }
+            if (!data.country || data.country.length == 0) {
+                return translation.countryerror;
+            }
+            if (!data.state) {
+                return translation.stateerror;
+            }
+            if (!data.zip) {
+                return translation.ziperror;
+            }
+            if (!data.description) {
+                return translation.descriptionerror;
             }
         };
         $scope.triggerSubmission = function () {
