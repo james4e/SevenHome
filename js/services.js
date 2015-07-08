@@ -68,6 +68,15 @@ angular.module('scotchApp.services', [])
             });
         };
 
+        sevenAPI.isJSON = function (str) {
+            try {
+                JSON.parse(str);
+            } catch (e) {
+                return false;
+            }
+            return true;
+        };
+
         return sevenAPI;
     }
 );

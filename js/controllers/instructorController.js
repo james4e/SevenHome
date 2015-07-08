@@ -35,12 +35,16 @@ angular.module('scotchApp.controllers.instructorController', []).
             if (res.success) {
                 _.each(res.data, function (t) {
                     if (t.majors) {
-                        t.majors = t.majors.replace('\\', '');
-                        t.majors = _.pluck(JSON.parse(t.majors), 'text');
+                        if (sevenAPIService.isJSON(t.majors)) {
+                            t.majors = t.majors.replace('\\', '');
+                            t.majors = _.pluck(JSON.parse(t.majors), 'text');
+                        }
                     }
                     if (t.subjects) {
-                        t.subjects = t.subjects.replace('\\', '');
-                        t.subjects = _.pluck(JSON.parse(t.subjects), 'text');
+                        if (sevenAPIService.isJSON(t.subjects)) {
+                            t.subjects = t.subjects.replace('\\', '');
+                            t.subjects = _.pluck(JSON.parse(t.subjects), 'text');
+                        }
                     }
 
                 });
