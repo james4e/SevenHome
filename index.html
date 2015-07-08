@@ -13,26 +13,26 @@
     <meta content='Seven Education' name='description'>
     <meta content='Seven Education' name='author'>
     <!-- ICO -->
-    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="images/ico/apple-touch-icon-57x57.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114x114.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144x144.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="images/ico/apple-touch-icon-60x60.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="images/ico/apple-touch-icon-120x120.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="images/ico/apple-touch-icon-76x76.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="images/ico/apple-touch-icon-152x152.png"/>
-    <link rel="icon" type="image/png" href="images/ico/favicon-196x196.png" sizes="196x196"/>
-    <link rel="icon" type="image/png" href="images/ico/favicon-96x96.png" sizes="96x96"/>
-    <link rel="icon" type="image/png" href="images/ico/favicon-32x32.png" sizes="32x32"/>
-    <link rel="icon" type="image/png" href="images/ico/favicon-16x16.png" sizes="16x16"/>
-    <link rel="icon" type="image/png" href="images/ico/favicon-128.png" sizes="128x128"/>
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="http://shiyang-fei.github.io/images/ico/apple-touch-icon-57x57.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://shiyang-fei.github.io/images/ico/apple-touch-icon-114x114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://shiyang-fei.github.io/images/ico/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://shiyang-fei.github.io/images/ico/apple-touch-icon-144x144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="http://shiyang-fei.github.io/images/ico/apple-touch-icon-60x60.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="http://shiyang-fei.github.io/images/ico/apple-touch-icon-120x120.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="http://shiyang-fei.github.io/images/ico/apple-touch-icon-76x76.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="http://shiyang-fei.github.io/images/ico/apple-touch-icon-152x152.png"/>
+    <link rel="icon" type="image/png" href="http://shiyang-fei.github.io/images/ico/favicon-196x196.png" sizes="196x196"/>
+    <link rel="icon" type="image/png" href="http://shiyang-fei.github.io/images/ico/favicon-96x96.png" sizes="96x96"/>
+    <link rel="icon" type="image/png" href="http://shiyang-fei.github.io/images/ico/favicon-32x32.png" sizes="32x32"/>
+    <link rel="icon" type="image/png" href="http://shiyang-fei.github.io/images/ico/favicon-16x16.png" sizes="16x16"/>
+    <link rel="icon" type="image/png" href="http://shiyang-fei.github.io/images/ico/favicon-128.png" sizes="128x128"/>
     <meta name="application-name" content="Seven Education"/>
     <meta name="msapplication-TileColor" content="#FFFFFF"/>
-    <meta name="msapplication-TileImage" content="images/ico/mstile-144x144.png"/>
-    <meta name="msapplication-square70x70logo" content="images/ico/mstile-70x70.png"/>
-    <meta name="msapplication-square150x150logo" content="images/ico/mstile-150x150.png"/>
-    <meta name="msapplication-wide310x150logo" content="images/ico/mstile-310x150.png"/>
-    <meta name="msapplication-square310x310logo" content="images/ico/mstile-310x310.png"/>
+    <meta name="msapplication-TileImage" content="http://shiyang-fei.github.io/images/ico/mstile-144x144.png"/>
+    <meta name="msapplication-square70x70logo" content="http://shiyang-fei.github.io/images/ico/mstile-70x70.png"/>
+    <meta name="msapplication-square150x150logo" content="http://shiyang-fei.github.io/images/ico/mstile-150x150.png"/>
+    <meta name="msapplication-wide310x150logo" content="http://shiyang-fei.github.io/images/ico/mstile-310x150.png"/>
+    <meta name="msapplication-square310x310logo" content="http://shiyang-fei.github.io/images/ico/mstile-310x310.png"/>
 
 
     <title>Seven Education</title>
@@ -96,9 +96,12 @@
     <script src="js/start-app.js" type="text/javascript"></script>
     <!-- ref:js app.js?v=<%= version %> -->
     <script src="js/conf.js" ></script>
-    <script src="js/app.js" type="text/javascript"></script>
     <script src="js/services.js" type="text/javascript"></script>
-    <script src="js/controllers.js" type="text/javascript"></script>
+    <script src="js/controllers/otherController.js" type="text/javascript"></script>
+    <script src="js/controllers/instructorController.js" type="text/javascript"></script>
+    <script src="js/controllers/instructorSignUpController.js" type="text/javascript"></script>
+    <script src="js/controllers/studentSignUpController.js" type="text/javascript"></script>
+    <script src="js/app.js" type="text/javascript"></script>
     <!-- endref -->
     <script src="locale/locale.js"></script>
 </head>
@@ -112,5 +115,22 @@
 <div ng-include src="'pages/footer.html'"></div>
 
 <script src="http://shiyang-fei.github.io/libs/other/app.js" type="text/javascript"></script>
+
+<!-- Piwik -->
+<script type="text/javascript">
+    var _paq = _paq || [];
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+        var u="//piwik.7edu.org/";
+        _paq.push(['setTrackerUrl', u+'piwik.php']);
+        _paq.push(['setSiteId', 1]);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+    })();
+</script>
+<noscript><p><img src="//piwik.7edu.org/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
+
 </body>
 </html>

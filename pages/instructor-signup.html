@@ -1,6 +1,6 @@
 <div ng-controller="instructorSignUpController">
     <toaster-container toaster-options="{'time-out': 3000, 'animation-class': 'toast-top-center'}"></toaster-container>
-    <div class='full parallax' style='background-image: url(images/Optimized-about-us.jpg); color: #fff;'>
+    <div class='full parallax' style='background-image: url(http://shiyang-fei.github.io/images/Optimized-about-us.jpg); color: #fff;'>
         <div class='row'>
             <div class='large-12 columns'>
                 <div class='big mod modSectionHeader'>
@@ -50,13 +50,14 @@
                                 </p>
                             </div>
                             <div class='medium-12 columns signup-container'>
-                                <input required class='required email' name='email'
+                                <input class='required email' name='email'
                                        placeholder='{{text.email}} ({{text.required}})'
                                        type="email" ng-model="formData.email">
-                                <input required class='required' name='password'
+                                <p>*{{text.passwordnotice}}</p>
+                                <input class='required' name='password'
                                        placeholder='{{text.password}} ({{text.required}})'
                                        type='password' ng-model="formData.password">
-                                <input required class='required' name='password1'
+                                <input class='required' name='password1'
                                        placeholder='{{text.confirmpassword}} ({{text.required}})'
                                        type='password' ng-model="formData.password1">
 
@@ -73,12 +74,12 @@
                                 <img ng-show="profileImage[0] != null" ngf-src="profileImage[0]"
                                      class="thumb profile-review" width="100px" height="100px">
 
-                                <input required class='required' name='name'
+                                <input class='required' name='name'
                                        placeholder='{{text.name}} ({{text.required}})'
                                        type='text'
                                        ng-model="formData.name">
 
-                                <input required class='required' name='weixin'
+                                <input class='required' name='weixin'
                                        placeholder='{{text.weixin}} ({{text.required}})'
                                        type="text"
                                        ng-model="formData.weixin">
@@ -123,22 +124,23 @@
                                     </option>
                                 </select>
 
-                                <input required class='required' name='state'
+                                <input class='required' name='state'
                                        placeholder='{{text.state}} ({{text.required}})'
                                        type='text'
                                        ng-model="formData.state">
 
-                                <input required class='required' name='zip'
+                                <input class='required' name='zip'
                                        placeholder='{{text.zip}} ({{text.required}})'
                                        type='text'
                                        ng-model="formData.zip">
 
-                                <textarea required name='introduction'
+                                <textarea name='description'
                                           placeholder='{{text.selfintro}} ({{text.required}})'
                                           ng-model="formData.description"></textarea>
 
-                                <input required class="button white" type="submit" value="{{text.submit}}"
-                                       ng-click="submitForm()">
+                                <input class="button white" type="submit" value="{{text.submit}}"
+                                       ng-click="submitForm()"
+                                       ng-disabled="disableSubmitBtn">
 
                                 <!--THIS IS A HIDDEN FIELD TO PREVENT SPAM-->
                                 <label><input type="text" class="spam-field" name="spam"

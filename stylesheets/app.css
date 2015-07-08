@@ -100,20 +100,23 @@ select {
     padding-left: 15px;
 }
 
-.ui-select-container {
-    line-height: 100%;
+button.disabled, button[disabled], .button.disabled, .button[disabled] {
+    background-color: #555555;
+    border-color: #555555;
+    color: #FFFFFF;
+    cursor: default;
+    opacity: 0.7;
+    box-shadow: none;
 }
 
-.ui-select-container input {
-    height: 22px;
-}
-
-.ui-select-container .selectize-input {
-    padding-left: 15px;
-    font-size: 14px;
-    margin-bottom: 1rem;
-}
-
-.ui-select-choices {
-    top: 48px !important;
+button.disabled:HOVER,
+button[disabled]:HOVER,
+.button.disabled:HOVER,
+.button[disabled]:HOVER {
+    background-color: #555555;
+    border-color: #555555;
+    color: #FFFFFF;
+    cursor: default;
+    opacity: 0.7;
+    box-shadow: none;
 }
